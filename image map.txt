@@ -1,0 +1,57 @@
+Home page: 
+	- 3x banner (full width)
+		- what we do
+		- Pilates
+		- get in touch
+	- 3x square 
+		- meet the team
+		- our services
+		- what we do
+	- 1x rectangle 
+		- generic, spine
+	- 1x banner (full width)
+		- pilates
+	- 2x rectangle
+		- podiatry
+		- what we do
+
+Meet the team:
+	- 1x banner (full width)
+	- 7x profile images (portrait)
+
+What we do:
+	- 1x banner (full width)
+	- 4x rectangle
+		- generic explanation
+
+Pilates : 
+	- 1x banner (full width)
+	- 1x rectangle
+		- pilates
+	- 1x badge
+		- appi, Australian physiotherapy and pilates institute
+
+Podiatry:
+	- 1x banner (full width)
+
+Services:
+	- 1x banner (full width)
+	- 2x rectangle
+		- generic
+	- 1x badge
+		- mummy MOT
+
+Testimonials:
+	- 1x banner (full width)
+
+Contact: 
+	- 1x banner (full width)
+
+Possible extras:
+	- facebook logo
+	- facebook profile screenshot
+	- maps logo
+	- email icon
+	- phone icon
+	- small physio icon, man on table
+	

@@ -1,0 +1,8 @@
+/* Page-specific styles go here */
+/* Import partials as needed: @use 'partials/hero'; */
+
+@media only screen and (min-width: 0px) {
+  #cs-hero {
+    padding: var(--sectionPadding); /* offset for fixed nav height */
+  }
+}
