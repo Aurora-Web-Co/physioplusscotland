@@ -1,6 +1,6 @@
 ---
-title: "Physiotherapy Plus Scotland"
-description: "Meta description for the home page"
+title: "Physiotherapy Plus Scotland | Physiotherapy in East Lothian"
+description: "Physiotherapy Plus Scotland covers the whole of East Lothian. A team of highly experienced and skilled Chartered Physiotherapists based in North Berwick."
 permalink: "/"
 tags: "sitemap"
 ---
@@ -9,29 +9,164 @@ tags: "sitemap"
 <link rel="stylesheet" href="/assets/css/local.css" />
 {% endblock %} {% block body %}
 
-<!-- Add page sections here -->
 <section id="cs-hero">
   <div class="cs-container">
-    <h1 class="cs-hero-title">Physiotherapy Plus Scotland</h1>
+    <h1 class="cs-hero-title">Physiotherapy East Lothian</h1>
     <p class="cs-text">
-      We apologize for any inconvenience caused but we are currently doing
-      maintenance work. We hope to have the site back up and running as soon as
-      possible. You are still able to book using the link below or by contacting
-      us directly. Thank you for your patience and understanding.
+      Physiotherapy Plus Scotland covers the whole of East Lothian. We are a
+      team of highly experienced and skilled Chartered Physiotherapists,
+      registered with the Health and Care Professions Council, the Chartered
+      Society of Physiotherapy, and recognised as a Physio First Centre.
     </p>
-    <a
-      class="cs-button-solid"
-      href="https://physiotherapyplusscotland.connect.tm3app.com"
-      >Book Now</a
-    >
+    <a class="cs-button-solid" href="{{ client.bookingUrl }}" target="_blank" rel="noopener">Book Now</a>
+  </div>
+</section>
+
+<section id="cs-banners" class="cs-container cs-grid cs-grid-3">
+  <a class="cs-banner-link" href="/what-we-do/">
+    <div class="cs-banner">
+      <img
+        src="{% getUrl '/assets/images/yury-kirillov-pbUWW-CBoqY-unsplash.jpg' | resize({ width: 700, height: 500 }) | jpeg %}"
+        alt="Physiotherapist assessing a patient's knee"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="cs-banner-title">What We Do</span>
+    </div>
+  </a>
+  <a class="cs-banner-link" href="/pilates/">
+    <div class="cs-banner">
+      <img
+        src="{% getUrl '/assets/images/logan-weaver-lgnwvr-u76Gd0hP5w4-unsplash.jpg' | resize({ width: 700, height: 500 }) | jpeg %}"
+        alt="Two people stretching during a Pilates class"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="cs-banner-title">Pilates</span>
+    </div>
+  </a>
+  <a class="cs-banner-link" href="/contact/">
+    <div class="cs-banner">
+      <img
+        src="{% getUrl '/assets/images/pexels-funkcines-terapijos-centras-927573878-20860587.jpg' | resize({ width: 700, height: 500 }) | jpeg %}"
+        alt="Physiotherapist treating a patient in clinic"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="cs-banner-title">Get In Touch</span>
+    </div>
+  </a>
+</section>
+
+<section id="cs-aim" class="cs-section">
+  <div class="cs-container">
+    <h2 class="cs-title">Our aim at Physiotherapy Plus is to:</h2>
+    <ul class="cs-list cs-text">
+      <li>Identify your condition</li>
+      <li>Work with you to find the best solution</li>
+      <li>Provide you with expert treatment and advice to maximise your potential</li>
+      <li>Offer prompt and efficient care for busy people</li>
+    </ul>
     <p class="cs-text">
-      Alternatively, you can contact us directly at:
-      <a href="mailto:info@physioplusscotland.co.uk"
-        ></br>info@physioplusscotland.co.uk</a
-      >
-      </br>or call us on: <a href="tel:01620 894 377"></br>01620 894 377</a>
+      In addition to Physiotherapy we have a team of other healthcare
+      professionals who provide Chiropody/Podiatry, Acupuncture, Pilates,
+      Hearing Tests, Health Screening, Massage Therapy, Sports Rehabilitation
+      and 1:1 Pilates.
     </p>
   </div>
+</section>
+
+<section id="cs-squares" class="cs-container cs-grid cs-grid-3">
+  <a class="cs-card" href="/meet-the-team/">
+    <img
+      src="{% getUrl '/assets/images/pexels-kampus-6111625.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+      alt="Physiotherapist assisting a patient with rehabilitation"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="cs-card-body">
+      <h3 class="cs-card-title">Meet The Team</h3>
+    </div>
+  </a>
+  <a class="cs-card" href="/services/">
+    <img
+      src="{% getUrl '/assets/images/alterfines-acupuncture-4175625_1920.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+      alt="Acupuncture treatment"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="cs-card-body">
+      <h3 class="cs-card-title">Our Services</h3>
+    </div>
+  </a>
+  <a class="cs-card" href="/what-we-do/">
+    <img
+      src="{% getUrl '/assets/images/pexels-karola-g-4506161.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+      alt="Physiotherapist examining a patient's neck and shoulder"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="cs-card-body">
+      <h3 class="cs-card-title">What We Do</h3>
+    </div>
+  </a>
+</section>
+
+<section id="cs-spine" class="cs-container cs-grid cs-grid-2">
+  <img
+    class="cs-full-image"
+    src="{% getUrl '/assets/images/zemletruth-back-4916984.jpg' | resize({ width: 900, height: 600 }) | jpeg %}"
+    alt="Illustration of back and spine"
+    loading="lazy"
+    decoding="async"
+  />
+  <div class="cs-content-block">
+    <h2 class="cs-title">Whatever's holding you back</h2>
+    <p class="cs-text">
+      From low back pain and sciatica to sports injuries and post-surgery
+      rehabilitation, our Chartered Physiotherapists identify the cause of
+      your problem and work with you to get you moving again.
+    </p>
+  </div>
+</section>
+
+<a class="cs-banner-link" href="/pilates/">
+  <div class="cs-banner">
+    <img
+      src="{% getUrl '/assets/images/pexels-funkcines-terapijos-centras-927573878-20860603.jpg' | resize({ width: 1600, height: 700 }) | jpeg %}"
+      alt="Physiotherapist-led Pilates class"
+      loading="eager"
+      decoding="async"
+    />
+    <span class="cs-banner-title">Pilates</span>
+  </div>
+</a>
+
+<section id="cs-rectangles" class="cs-container cs-grid cs-grid-2">
+  <a class="cs-card" href="/podiatry/">
+    <img
+      src="{% getUrl '/assets/images/toralf-thomassen-5S40ixhBK-I-unsplash.jpg' | resize({ width: 700, height: 450 }) | jpeg %}"
+      alt="Podiatrist examining a patient's foot"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="cs-card-body">
+      <h3 class="cs-card-title">Podiatry</h3>
+      <p class="cs-text">The Podiatry services we offer will meet your needs & requirements.</p>
+    </div>
+  </a>
+  <a class="cs-card" href="/what-we-do/">
+    <img
+      src="{% getUrl '/assets/images/pexels-worldsikhorg-14797760.jpg' | resize({ width: 700, height: 450 }) | jpeg %}"
+      alt="Physiotherapist consultation using a spine model"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="cs-card-body">
+      <h3 class="cs-card-title">What We Do</h3>
+      <p class="cs-text">Take a look at a range of our services and what we do here at Physiotherapy Plus.</p>
+    </div>
+  </a>
 </section>
 
 {% endblock %}

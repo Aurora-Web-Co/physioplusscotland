@@ -1,0 +1,114 @@
+---
+title: "What We Do | Physiotherapy Plus Scotland"
+description: "From low back pain and sciatica to sports injuries and post-surgery rehabilitation, see the full range of conditions treated at Physiotherapy Plus Scotland."
+permalink: "/what-we-do/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/what-we-do.css" />
+{% endblock %} {% block body %}
+
+<div class="cs-banner">
+  <img
+    src="{% getUrl '/assets/images/pexels-funkcines-terapijos-centras-927573878-20860621.jpg' | resize({ width: 1600, height: 700 }) | jpeg %}"
+    alt="Physiotherapist applying kinesiology tape to a patient's back"
+    loading="eager"
+    decoding="async"
+  />
+  <span class="cs-banner-title">What We Do</span>
+</div>
+
+<section id="cs-conditions" class="cs-section">
+  <div class="cs-container cs-grid cs-grid-4">
+
+    <div class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/mrdjrlawrence-ankle-3135710_1920.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+        alt="Physiotherapist assessing a patient's ankle"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Low Back Pain</h2>
+        <ul class="cs-list">
+          <li>Sciatica</li>
+          <li>Slipped Discs</li>
+          <li>Trapped Nerves</li>
+          <li>Chronic Back Pain</li>
+          <li>Sacro-iliac Joint Problems</li>
+          <li>Stenosis</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/pexels-karola-g-4506166.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+        alt="Physiotherapist assisting a patient with a resistance band"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Neck Pain</h2>
+        <ul class="cs-list">
+          <li>Whiplash</li>
+          <li>Disc Problems</li>
+          <li>Wear &amp; Tear</li>
+          <li>Postural Problems</li>
+          <li>Headaches</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/pexels-karola-g-4506169.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+        alt="Physiotherapist mobilising a patient's arm"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Joint &amp; Muscle Problems</h2>
+        <ul class="cs-list">
+          <li>Fractures</li>
+          <li>Osteo &amp; Rheumatoid Arthritis</li>
+          <li>Strains &amp; Sprains, Muscle Pulls</li>
+          <li>Tendinitis &amp; Tendinopathy</li>
+          <li>Cartilage &amp; Ligament Tears</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/sincerely-media-inoZpsBQRqk-unsplash.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+        alt="Two people doing rehabilitation exercises with light weights"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Sports Injuries &amp; Post Surgery</h2>
+        <ul class="cs-list">
+          <li>Golfer's &amp; Tennis Elbow</li>
+          <li>Runner's Knee, Hamstring Tears</li>
+          <li>Achilles Tendon Problems</li>
+          <li>Hip / Knee Replacement</li>
+          <li>Arthroscopy &amp; Spinal Surgery</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-container">
+    <h2 class="cs-title">Women's Health</h2>
+    <p class="cs-text">
+      Ante &amp; Post-natal care, and treatment for pelvic floor weakness,
+      including our Mummy MOT service. See our
+      <a href="/services/">Services</a> page for pricing.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

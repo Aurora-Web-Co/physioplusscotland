@@ -1,0 +1,84 @@
+---
+title: "Pilates | Physiotherapy Plus Scotland"
+description: "Physiotherapist and instructor-led Pilates classes at Physiotherapy Plus Scotland, Abbey Hall, North Berwick."
+permalink: "/pilates/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/pilates.css" />
+{% endblock %} {% block body %}
+
+<div class="cs-banner">
+  <img
+    src="{% getUrl '/assets/images/logan-weaver-lgnwvr-u76Gd0hP5w4-unsplash.jpg' | resize({ width: 1600, height: 700, position: 'attention' }) | jpeg %}"
+    alt="Pilates class stretching"
+    loading="eager"
+    decoding="async"
+  />
+  <span class="cs-banner-title">Pilates</span>
+</div>
+
+<section id="cs-pilates" class="cs-container cs-section cs-grid cs-grid-2">
+  <div class="cs-content-block">
+    <h1 class="cs-title">Why Pilates?</h1>
+    <p class="cs-text">
+      We now offer classes led by Physiotherapists and fitness instructors.
+      Pilates is a form of low impact conditioning exercise that is safe and
+      strengthens the core muscles of the whole body. It also improves
+      general flexibility, promotes good postural alignment and helps you
+      feel stretched, relaxed and lighter after each class.
+    </p>
+    <p class="cs-text">
+      Our physiotherapists are trained by the Australian Physiotherapy and
+      Pilates Institute (APPI), who coach modified Pilates moves based on the
+      original 34 moves Joseph Pilates created. It is suitable for almost
+      everyone, including those with postural, spinal, musculoskeletal or
+      neurological conditions. We also offer 1:1 or small group Pilates
+      rehabilitation.
+    </p>
+    <ul class="cs-list cs-text">
+      <li>Strengthens and tones the core and body</li>
+      <li>Improves general flexibility, proprioception and balance</li>
+      <li>Ideal rehabilitation tool &mdash; relaxes and invigorates</li>
+      <li>Promotes wellbeing and good sleep</li>
+      <li>Safe and effective for sciatica, arthritis, osteoporosis, scoliosis, MS and many more</li>
+      <li>Restores muscle balance</li>
+    </ul>
+  </div>
+  <img
+    class="cs-full-image"
+    src="{% getUrl '/assets/images/pexels-klaus-nielsen-6303422.jpg' | resize({ width: 900, height: 700 }) | jpeg %}"
+    alt="Rolling out a yoga mat"
+    loading="lazy"
+    decoding="async"
+  />
+</section>
+
+<section id="cs-classes" class="cs-section cs-section-alt">
+  <div class="cs-container">
+    <h2 class="cs-title">Classes</h2>
+    <p class="cs-text">
+      Rachael's Physiotherapist-led classes @ Abbey Hall, North Berwick &mdash;
+      Thursday 12.15pm, or available 1-on-1 in clinic.
+    </p>
+    <p class="cs-text">
+      Fitness Instructor-led classes @ Abbey Hall, North Berwick. Please
+      contact us on <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>,
+      <a href="mailto:{{ client.email }}">{{ client.email }}</a> or book online.
+    </p>
+    <img
+      class="cs-badge"
+      src="{% getUrl '/assets/images/appi-badge.png' | resize({ width: 300 }) | png %}"
+      alt="Australian Physiotherapy and Pilates Institute (APPI) accreditation badge"
+      loading="lazy"
+      decoding="async"
+    />
+    <p class="cs-text">
+      If you are unsure Pilates is for you please
+      <a href="/contact/">contact us</a> for more information.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

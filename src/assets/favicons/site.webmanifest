@@ -1,0 +1,19 @@
+{
+  "name": "Physiotherapy Plus Scotland",
+  "short_name": "Physio Plus",
+  "icons": [
+    {
+      "src": "/assets/favicons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1c3f8f",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

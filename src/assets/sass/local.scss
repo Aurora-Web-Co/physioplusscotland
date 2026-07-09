@@ -1,8 +1,28 @@
-/* Page-specific styles go here */
-/* Import partials as needed: @use 'partials/hero'; */
+/* Home page styles */
 
 @media only screen and (min-width: 0px) {
   #cs-hero {
-    padding: var(--sectionPadding); /* offset for fixed nav height */
+    padding: 9rem 0 2rem 0; /* extra offset below the fixed nav, tighter bottom gap to the banners */
+    text-align: center;
+    .cs-hero-title {
+      font-size: var(--headerFontSize);
+      font-family: var(--headerFont);
+      font-weight: 700;
+      color: var(--headerColor);
+      margin-bottom: 1rem;
+    }
+    .cs-text {
+      max-width: 40.625rem;
+      margin: 0 auto;
+    }
+  }
+
+  .cs-banner-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  #cs-spine {
+    align-items: center;
   }
 }

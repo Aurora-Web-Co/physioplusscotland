@@ -26,8 +26,9 @@
     --bodyFontSize: 1rem;
 
     /* Spacing */
-    /* 60px - 100px top and bottom */
-    --sectionPadding: 5rem 0 5rem 0;
+    /* 60px - 100px top and bottom. Longhand-only (padding-top/padding-bottom) wherever this
+       is consumed, so it never collides with a co-applied class's own left/right padding. */
+    --sectionPadding: 5rem;
 
     /* Fonts — update to match project typeface */
     --headerFont: "Roboto", Arial, sans-serif;
@@ -97,11 +98,12 @@
 
   /* Container */
   .cs-container {
-    padding: var(--sectionPadding);
     width: 100%;
     max-width: 80rem;
     margin: 0 auto;
-    padding: 0 1rem;
+    /* longhand so this never collides with a co-applied class's own top/bottom padding */
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   /* Button */
@@ -161,14 +163,16 @@
 
     .cs-nav-list {
       display: flex;
-      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.75rem 1.25rem;
       list-style: none;
       margin: 0;
-      padding: 0;
+      padding: 0.5rem 0;
     }
 
     .cs-nav-link {
-      font-size: 1rem;
+      font-size: 0.9375rem;
       font-weight: 600;
       color: var(--headerColor);
       text-decoration: none;
@@ -176,6 +180,94 @@
       &:hover {
         color: var(--primary);
       }
+    }
+
+    &.cs-scrolled .cs-nav-link {
+      color: var(--headerColor);
+    }
+
+    .cs-nav-button {
+      background-color: var(--primary);
+      color: var(--primaryLight) !important;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: var(--secondary);
+      }
+    }
+
+    .cs-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.3125rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 10001;
+
+      span {
+        display: block;
+        width: 1.625rem;
+        height: 0.1875rem;
+        background-color: var(--headerColor);
+        border-radius: 0.125rem;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 63.9375rem) {
+  #cs-navigation {
+    .cs-toggle {
+      display: flex;
+    }
+
+    .cs-nav-list {
+      position: fixed;
+      top: 4rem;
+      left: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+      height: calc(100dvh - 4rem);
+      margin: 0;
+      padding: 2rem 1.25rem;
+      gap: 1.5rem;
+      background-color: var(--bg-base);
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    &.cs-active {
+      background-color: var(--bg-base);
+
+      .cs-nav-list {
+        transform: translateX(0);
+      }
+
+      .cs-toggle span.cs-line1 {
+        transform: translateY(0.5rem) rotate(45deg);
+      }
+      .cs-toggle span.cs-line2 {
+        opacity: 0;
+      }
+      .cs-toggle span.cs-line3 {
+        transform: translateY(-0.5rem) rotate(-45deg);
+      }
+    }
+
+    .cs-nav-button {
+      display: inline-block;
     }
   }
 }
@@ -186,7 +278,8 @@
 
 @media only screen and (min-width: 0px) {
   #cs-footer {
-    padding: var(--sectionPadding);
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
     background-color: var(--bg-section-alt);
 
     .cs-container {
@@ -241,5 +334,286 @@
     .cs-container {
       grid-template-columns: 1fr 1fr 1fr;
     }
+  }
+}
+
+/*-- -------------------------- -->
+<---      Shared Components     -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0px) {
+  /* Full width image banner with overlaid title */
+  .cs-banner {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 2;
+    }
+    .cs-banner-title {
+      position: relative;
+      z-index: 3;
+      color: #fff;
+      text-align: center;
+      font-family: var(--headerFont);
+      font-size: var(--headerFontSize);
+      font-weight: 700;
+      padding: 0 1rem;
+    }
+  }
+
+  /* Responsive grid for cards/rectangles/squares */
+  .cs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+  }
+
+  .cs-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: var(--bg-card);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    img {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+    }
+    .cs-card-body {
+      padding: 1.25rem;
+    }
+    .cs-card-title {
+      font-family: var(--headerFont);
+      font-weight: 700;
+      color: var(--headerColor);
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  /* Team profile card */
+  .cs-profile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    img {
+      width: 12rem;
+      height: 12rem;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+    }
+    .cs-profile-placeholder {
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary);
+      color: #fff;
+      font-family: var(--headerFont);
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+    .cs-profile-name {
+      font-family: var(--headerFont);
+      font-weight: 700;
+      color: var(--headerColor);
+      margin-bottom: 0.25rem;
+    }
+    .cs-profile-title {
+      font-size: 0.875rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .cs-profile-bio {
+      font-size: 0.9375rem;
+      line-height: 1.5em;
+      text-align: left;
+    }
+  }
+
+  .cs-content-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cs-full-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  /* Accreditation badge */
+  .cs-badge {
+    display: block;
+    margin: 2rem auto;
+    max-width: 10rem;
+  }
+
+  /* Simple content section */
+  .cs-section {
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+  }
+
+  .cs-section-alt {
+    background-color: var(--bg-section-alt);
+  }
+
+  .cs-list {
+    padding: 0 0 0 1.25rem;
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5em;
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  /* Cookie consent banner */
+  .cs-cookie-banner {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 20000;
+    max-width: 40rem;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    padding: 1.25rem;
+
+    &[hidden] {
+      display: none;
+    }
+
+    .cs-cookie-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cs-cookie-text {
+      font-size: 0.875rem;
+      line-height: 1.5em;
+      color: var(--bodyTextColor);
+      a {
+        color: var(--primary);
+      }
+    }
+
+    .cs-cookie-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: flex-end;
+
+      button {
+        padding: 0.5rem 1.25rem;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+        font-weight: 700;
+        cursor: pointer;
+        border: 1px solid var(--primary);
+        background-color: transparent;
+        color: var(--primary);
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .cs-cookie-accept {
+        background-color: var(--primary);
+        color: var(--primaryLight);
+        &:hover {
+          background-color: var(--secondary);
+        }
+      }
+
+      .cs-cookie-decline:hover {
+        background-color: var(--primary);
+        color: var(--primaryLight);
+      }
+    }
+  }
+
+  /* Consent-gated map embed */
+  .cs-map-wrapper {
+    position: relative;
+
+    .cs-map-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--bg-card);
+      border-radius: 0.5rem;
+
+      .cs-text {
+        padding: 0;
+        max-width: none;
+      }
+    }
+
+    &.cs-consent-given .cs-map-placeholder {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .cs-grid.cs-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cs-grid.cs-grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .cs-grid.cs-grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cs-grid.cs-grid-7 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .cs-banner {
+    height: 26rem;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .cs-grid.cs-grid-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .cs-grid.cs-grid-7 {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

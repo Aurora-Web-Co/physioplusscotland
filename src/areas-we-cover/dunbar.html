@@ -1,0 +1,43 @@
+---
+title: "Joint Problems in Dunbar | Physiotherapy Plus Scotland"
+description: "Physiotherapy Plus Scotland treats joint problems, fractures and arthritis for patients in Dunbar and the surrounding area."
+permalink: "/areas-we-cover/dunbar/"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/area-page.css" />
+{% endblock %} {% block body %}
+
+<div class="cs-banner">
+  <img
+    src="{% getUrl '/assets/images/sincerely-media-inoZpsBQRqk-unsplash.jpg' | resize({ width: 1600, height: 700 }) | jpeg %}"
+    alt="Rehabilitation exercise with light weights"
+    loading="eager"
+    decoding="async"
+  />
+  <span class="cs-banner-title">Joint Problems in Dunbar</span>
+</div>
+
+<section id="cs-area" class="cs-section">
+  <div class="cs-container">
+    <p class="cs-text">
+      At Physiotherapy Plus, we offer a variety of treatments and services
+      for joint problems in Dunbar and the local area, including fractures,
+      osteoarthritis and rheumatoid arthritis, as well as many other
+      conditions.
+    </p>
+    <p class="cs-text">
+      Joint pain can often be managed with medication, injections, physical
+      therapy, home care and supplements &mdash; but you should seek medical
+      attention immediately if the pain becomes severe or a joint suddenly
+      becomes deformed, inflamed, or unusable.
+    </p>
+    <p class="cs-text">
+      For more information about treatment for joint problems in Dunbar, call
+      us on <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
+      or <a href="/contact/">get in touch</a>.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

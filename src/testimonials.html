@@ -1,0 +1,63 @@
+---
+title: "Testimonials | Physiotherapy Plus Scotland"
+description: "Read what our patients say about Physiotherapy Plus Scotland in North Berwick, East Lothian."
+permalink: "/testimonials/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/testimonials.css" />
+{% endblock %} {% block body %}
+
+<div class="cs-banner">
+  <img
+    src="{% getUrl '/assets/images/pexels-karola-g-4506166.jpg' | resize({ width: 1600, height: 700 }) | jpeg %}"
+    alt="Physiotherapist assisting a patient with a resistance band"
+    loading="eager"
+    decoding="async"
+  />
+  <span class="cs-banner-title">Testimonials</span>
+</div>
+
+<section id="cs-testimonials" class="cs-container cs-section cs-grid cs-grid-2">
+
+  <blockquote class="cs-testimonial">
+    <p class="cs-testimonial-title">Well Experienced Staff</p>
+    <p class="cs-text">
+      "Professional and very well experienced staff. Highly recommend their
+      service. A friendly accommodating welcome for everyone."
+    </p>
+    <cite>&mdash; S. Grant</cite>
+  </blockquote>
+
+  <blockquote class="cs-testimonial">
+    <p class="cs-testimonial-title">Sorted My Back Out</p>
+    <p class="cs-text">
+      "Sorted my back out! No mean feat but mean thumbs! Great job!"
+    </p>
+    <cite>&mdash; C. Watt</cite>
+  </blockquote>
+
+  <blockquote class="cs-testimonial">
+    <p class="cs-testimonial-title">Very Professional &amp; Thorough</p>
+    <p class="cs-text">
+      "I was initially referred through IPRS Group and saw Rachel for a few
+      sessions who was very professional in diagnosing and straightening out
+      my back problems. Local, central and very friendly. Highly recommended,
+      thanks guys!"
+    </p>
+    <cite>&mdash; R. Grant</cite>
+  </blockquote>
+
+  <blockquote class="cs-testimonial">
+    <p class="cs-testimonial-title">First Class Treatment</p>
+    <p class="cs-text">
+      "First class treatment in helping me rehab an injury back to full
+      strength. A very personal and caring practice."
+    </p>
+    <cite>&mdash; G. Reid</cite>
+  </blockquote>
+
+</section>
+
+{% endblock %}

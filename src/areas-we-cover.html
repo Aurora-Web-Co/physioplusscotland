@@ -1,0 +1,59 @@
+---
+title: "Areas We Cover | Physiotherapy Plus Scotland"
+description: "Physiotherapy Plus Scotland provides physiotherapy across East Lothian, including Haddington, Musselburgh, Dunbar and North Berwick."
+permalink: "/areas-we-cover/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/areas-we-cover.css" />
+{% endblock %} {% block body %}
+
+<div class="cs-banner">
+  <img
+    src="{% getUrl '/assets/images/pexels-worldsikhorg-14797760.jpg' | resize({ width: 1600, height: 700 }) | jpeg %}"
+    alt="Physiotherapy consultation"
+    loading="eager"
+    decoding="async"
+  />
+  <span class="cs-banner-title">Areas We Cover</span>
+</div>
+
+<section id="cs-areas" class="cs-section">
+  <div class="cs-container">
+    <p class="cs-text">
+      At Physiotherapy Plus, we are highly experienced Chartered
+      Physiotherapists. We aim to work closely with you to find the best
+      solution to your problems and provide prompt care. Our team is
+      registered with the Health and Care Professions Council and approved by
+      all major insurance companies.
+    </p>
+    <p class="cs-text">
+      Working throughout East Lothian, some of the areas we cover include
+      Haddington, Musselburgh, Dunbar, North Berwick, Prestonpans,
+      Gilchriston, Tranent, Scoughall, Ormiston and Gullane.
+    </p>
+    <p class="cs-text">
+      If you require our services but cannot see your area, don't hesitate to
+      <a href="/contact/">contact us</a> or call us on
+      <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>.
+    </p>
+  </div>
+
+  <div class="cs-container cs-grid cs-grid-4">
+    <a class="cs-card" href="/areas-we-cover/east-lothian/">
+      <div class="cs-card-body"><h2 class="cs-card-title">East Lothian</h2></div>
+    </a>
+    <a class="cs-card" href="/areas-we-cover/musselburgh/">
+      <div class="cs-card-body"><h2 class="cs-card-title">Musselburgh</h2></div>
+    </a>
+    <a class="cs-card" href="/areas-we-cover/dunbar/">
+      <div class="cs-card-body"><h2 class="cs-card-title">Dunbar</h2></div>
+    </a>
+    <a class="cs-card" href="/areas-we-cover/haddington/">
+      <div class="cs-card-body"><h2 class="cs-card-title">Haddington</h2></div>
+    </a>
+  </div>
+</section>
+
+{% endblock %}

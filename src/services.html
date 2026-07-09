@@ -1,0 +1,84 @@
+---
+title: "Services & Prices | Physiotherapy Plus Scotland"
+description: "Physiotherapy, Podiatry and Mummy MOT consultation prices at Physiotherapy Plus Scotland, North Berwick."
+permalink: "/services/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/services.css" />
+{% endblock %} {% block body %}
+
+<div class="cs-banner">
+  <img
+    src="{% getUrl '/assets/images/toa-heftiba-a9pFSC8dTlo-unsplash.jpg' | resize({ width: 1600, height: 700, position: 'attention' }) | jpeg %}"
+    alt="Hands-on physiotherapy treatment"
+    loading="eager"
+    decoding="async"
+  />
+  <span class="cs-banner-title">Services</span>
+</div>
+
+<section id="cs-prices" class="cs-section">
+  <div class="cs-container">
+    <h1 class="cs-title">Physiotherapy Services</h1>
+    <table class="cs-price-table">
+      <tbody>
+        <tr><td>Initial Consultation (1 Hour)</td><td>&pound;80</td></tr>
+        <tr><td>Follow-up Consultation (45 mins)</td><td>&pound;65</td></tr>
+        <tr><td>Follow-up Appointment (1/2 Hour)</td><td>&pound;50</td></tr>
+        <tr><td>Domiciliary Visit (1 Hour)</td><td>from &pound;95</td></tr>
+        <tr><td>Podiatry / Chiropody &mdash; Full Foot Consultation</td><td>&pound;40</td></tr>
+        <tr><td>Podiatry / Chiropody &mdash; Nail Cutting Services</td><td>from &pound;25</td></tr>
+        <tr><td>Mummy MOT Initial Consultation (75 mins)</td><td>&pound;100</td></tr>
+        <tr><td>Mummy MOT Follow-Up Consultation (45 mins)</td><td>&pound;75</td></tr>
+        <tr><td>Women's Pelvic Health Initial Consultation (60 mins)</td><td>&pound;85</td></tr>
+        <tr><td>Women's Pelvic Health Follow-Up (45 mins)</td><td>&pound;75</td></tr>
+      </tbody>
+    </table>
+    <p class="cs-text">
+      All Physiotherapists are Chartered Physiotherapists, Registered with the
+      Health and Care Professions Council and approved by all major insurance
+      companies.
+    </p>
+  </div>
+
+  <div class="cs-container cs-grid cs-grid-2">
+    <div class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/pexels-ai25studioai-6076136.jpg' | resize({ width: 700, height: 450, position: 'attention' }) | jpeg %}"
+        alt="Kinesiology taping for a sports injury"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Sports & Soft Tissue Treatment</h2>
+        <p class="cs-text">Taping, manual therapy and rehabilitation for sports injuries and soft tissue problems.</p>
+      </div>
+    </div>
+    <div class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/pexels-funkcines-terapijos-centras-927573878-20860623.jpg' | resize({ width: 700, height: 450 }) | jpeg %}"
+        alt="Physiotherapy treatment session"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Acupuncture & Massage Therapy</h2>
+        <p class="cs-text">Acupuncture, massage therapy and health screening alongside your physiotherapy plan.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-container">
+    <img
+      class="cs-badge"
+      src="{% getUrl '/assets/images/mummy-mot-badge.png' | resize({ width: 300 }) | png %}"
+      alt="Mummy MOT accredited practitioner badge"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</section>
+
+{% endblock %}

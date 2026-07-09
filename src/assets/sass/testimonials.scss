@@ -1,0 +1,23 @@
+/* Testimonials page styles */
+
+@media only screen and (min-width: 0px) {
+  .cs-testimonial {
+    background-color: var(--bg-card);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    .cs-testimonial-title {
+      font-family: var(--headerFont);
+      font-weight: 700;
+      color: var(--headerColor);
+      margin-bottom: 0.5rem;
+    }
+    cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--primary);
+    }
+  }
+}

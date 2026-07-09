@@ -1,0 +1,43 @@
+---
+title: "Physiotherapy in East Lothian | Physiotherapy Plus Scotland"
+description: "Physiotherapy for lower back pain and sciatica across East Lothian, from our North Berwick clinic."
+permalink: "/areas-we-cover/east-lothian/"
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/area-page.css" />
+{% endblock %} {% block body %}
+
+<div class="cs-banner">
+  <img
+    src="{% getUrl '/assets/images/yury-kirillov-pbUWW-CBoqY-unsplash.jpg' | resize({ width: 1600, height: 700 }) | jpeg %}"
+    alt="Physiotherapist assessing a patient's knee"
+    loading="eager"
+    decoding="async"
+  />
+  <span class="cs-banner-title">Physiotherapy in East Lothian</span>
+</div>
+
+<section id="cs-area" class="cs-section">
+  <div class="cs-container">
+    <p class="cs-text">
+      At Physiotherapy Plus, our team of Chartered Physiotherapists work
+      across East Lothian, providing expert treatment for lower back pain,
+      sciatica, and chronic back pain. Sciatica affects around 40% of the
+      population and is most common in adults in their 40s and 50s &mdash;
+      most cases improve within 4&ndash;6 weeks with the right treatment.
+    </p>
+    <p class="cs-text">
+      To help prevent lower back pain, stay active, avoid sitting for
+      extended periods, take care when lifting, and try not to slouch when
+      standing or sitting.
+    </p>
+    <p class="cs-text">
+      For more information about treatment for lower back pain in East
+      Lothian, call us on <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
+      or <a href="/contact/">get in touch</a>.
+    </p>
+  </div>
+</section>
+
+{% endblock %}
