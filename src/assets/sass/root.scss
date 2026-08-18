@@ -28,11 +28,11 @@
     /* Spacing */
     /* 60px - 100px top and bottom. Longhand-only (padding-top/padding-bottom) wherever this
        is consumed, so it never collides with a co-applied class's own left/right padding. */
-    --sectionPadding: 5rem;
+    --sectionPadding: 2rem;
 
     /* Fonts — update to match project typeface */
-    --headerFont: "Roboto", Arial, sans-serif;
-    --bodyFont: "Roboto", Arial, sans-serif;
+    --headerFont: "Hanken Grotesk", Arial, sans-serif;
+    --bodyFont: "Hanken Grotesk", Arial, sans-serif;
   }
 
   html,
@@ -128,19 +128,53 @@
 <--- -------------------------- -*/
 
 @media only screen and (min-width: 0px) {
+  #banner {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    color: var(--primaryLight);
+
+    .cs-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .banner-left {
+      display: flex;
+      gap: 0.75rem 1.25rem;
+      list-style: none;
+      margin: 0;
+    }
+    .banner-right {
+      display: flex;
+      gap: 0.75rem 1.25rem;
+      list-style: none;
+      margin: 0;
+    }
+
+    .banner-link {
+      font-size: clamp(0.5rem, 0.8vw, 1rem);
+      font-weight: 600;
+      color: var(--primaryLight);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      &:hover {
+        color: var(--headerColor);
+      }
+    }
+  }
+
   #cs-navigation {
-    position: fixed;
+    position: sticky;
+    background-color: var(--bg-base);
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10000;
-    background-color: transparent;
     transition:
       background-color 0.3s ease,
       box-shadow 0.3s ease;
 
     &.cs-scrolled {
-      background-color: var(--bg-base);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
@@ -148,7 +182,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 4rem;
+      height: 5rem;
     }
 
     .cs-logo {
@@ -172,18 +206,28 @@
     }
 
     .cs-nav-link {
+      position: relative;
       font-size: 0.9375rem;
       font-weight: 600;
       color: var(--headerColor);
       text-decoration: none;
-      transition: color 0.2s ease;
-      &:hover {
-        color: var(--primary);
-      }
-    }
 
-    &.cs-scrolled .cs-nav-link {
-      color: var(--headerColor);
+      &:not(.cs-nav-button)::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        width: 0;
+        height: 0.125rem;
+        background-color: var(--primary);
+        transition: width 0.25s ease;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+
+      &:not(.cs-nav-button):hover::after {
+        width: 100%;
+      }
     }
 
     .cs-nav-button {
@@ -193,6 +237,42 @@
       border-radius: 0.25rem;
       &:hover {
         background-color: var(--secondary);
+      }
+    }
+
+    .cs-dropdown {
+      position: relative;
+    }
+
+    .cs-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .cs-dropdown-arrow {
+      transition: transform 0.2s ease;
+    }
+
+    .cs-dropdown-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cs-dropdown-link {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--headerColor);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      &:hover {
+        color: var(--primary);
       }
     }
 
@@ -228,6 +308,7 @@
   #cs-navigation {
     .cs-toggle {
       display: flex;
+      margin-left: auto;
     }
 
     .cs-nav-list {
@@ -235,8 +316,8 @@
       top: 4rem;
       left: 0;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       height: calc(100dvh - 4rem);
       margin: 0;
@@ -244,8 +325,13 @@
       gap: 1.5rem;
       background-color: var(--bg-base);
       overflow-y: auto;
-      transform: translateX(-100%);
+      transform: translateX(100%);
       transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .cs-nav-link {
+      font-size: 1.25rem;
     }
 
     &.cs-active {
@@ -268,6 +354,76 @@
 
     .cs-nav-button {
       display: inline-block;
+    }
+
+    .cs-dropdown {
+      width: 100%;
+    }
+
+    .cs-dropdown-toggle {
+      width: 100%;
+      justify-content: center;
+      padding: 0;
+      color: var(--headerColor);
+    }
+
+    .cs-dropdown-list {
+      max-height: 0;
+      overflow: hidden;
+      text-align: center;
+      transition: max-height 0.3s ease;
+    }
+
+    .cs-dropdown-link {
+      padding: 0.75rem 0 0;
+    }
+
+    .cs-dropdown.cs-dropdown-active {
+      .cs-dropdown-list {
+        max-height: 15rem;
+        margin-top: 0.75rem;
+      }
+
+      .cs-dropdown-arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  #cs-navigation {
+    .cs-dropdown-list {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 10rem;
+      padding: 0.5rem 0;
+      background-color: var(--bg-base);
+      border-radius: 0.25rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+    }
+
+    .cs-dropdown-link {
+      padding: 0.5rem 1.25rem;
+      white-space: nowrap;
+    }
+
+    .cs-dropdown:hover .cs-dropdown-list,
+    .cs-dropdown.cs-dropdown-active .cs-dropdown-list {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cs-dropdown:hover .cs-dropdown-arrow,
+    .cs-dropdown.cs-dropdown-active .cs-dropdown-arrow {
+      transform: rotate(180deg);
     }
   }
 }
@@ -347,7 +503,6 @@
     position: relative;
     width: 100%;
     height: 20rem;
-    margin-top: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -384,8 +539,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding-top: var(--sectionPadding);
-    padding-bottom: var(--sectionPadding);
+    padding: var(--sectionPadding);
   }
 
   .cs-card {
@@ -416,18 +570,34 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    img {
-      width: 12rem;
-      height: 12rem;
-      object-fit: cover;
-      border-radius: 50%;
+    .cs-profile-toggle {
+      position: relative;
+      display: block;
+      width: 15rem;
       margin: 0 auto 1rem;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-radius: 5%;
+      overflow: hidden;
+      &:focus-visible {
+        outline: 0.15rem solid var(--primary);
+        outline-offset: 0.15rem;
+      }
+    }
+    img {
+      width: 15rem;
+      height: 20rem;
+      object-fit: cover;
+      border-radius: 5%;
+      display: block;
+      transition: filter 0.2s ease-in-out;
     }
     .cs-profile-placeholder {
-      width: 12rem;
-      height: 12rem;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
+      width: 15rem;
+      height: 20rem;
+      border-radius: 5%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -436,6 +606,27 @@
       font-family: var(--headerFont);
       font-weight: 700;
       font-size: 2.5rem;
+    }
+    .cs-profile-plus {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--primary);
+      transition:
+        color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out;
+    }
+    .cs-profile-toggle:hover .cs-profile-plus,
+    .cs-profile-toggle:focus-visible .cs-profile-plus {
+      color: var(--primaryLight);
+      background-color: var(--primary);
     }
     .cs-profile-name {
       font-family: var(--headerFont);

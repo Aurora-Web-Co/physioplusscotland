@@ -19,13 +19,12 @@ tags: "sitemap"
   <span class="cs-banner-title">What We Do</span>
 </div>
 
-<section id="cs-conditions" class="cs-section">
-  <div class="cs-container cs-grid cs-grid-4">
-
+<section id="cs-services" class="cs-section cs-section-alt">
+  <div class="cs-container cs-grid cs-grid-3">
     <div class="cs-card">
       <img
-        src="{% getUrl '/assets/images/mrdjrlawrence-ankle-3135710_1920.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
-        alt="Physiotherapist assessing a patient's ankle"
+        src="{% getUrl '/assets/images/annie-spratt-Nt5eeIKH-1s-unsplash.jpg' | resize({ width: 500, height: 400, position: 'attention' }) | jpeg %}"
+        alt="Physiotherapist assisting a patient with a lower back and hip stretch"
         loading="lazy"
         decoding="async"
       />
@@ -44,8 +43,8 @@ tags: "sitemap"
 
     <div class="cs-card">
       <img
-        src="{% getUrl '/assets/images/pexels-karola-g-4506166.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
-        alt="Physiotherapist assisting a patient with a resistance band"
+        src="{% getUrl '/assets/images/pexels-karola-g-4506161.jpg' | resize({ width: 500, height: 400, position: 'attention' }) | jpeg %}"
+        alt="Physiotherapist assessing a patient's neck"
         loading="lazy"
         decoding="async"
       />
@@ -82,8 +81,8 @@ tags: "sitemap"
 
     <div class="cs-card">
       <img
-        src="{% getUrl '/assets/images/sincerely-media-inoZpsBQRqk-unsplash.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
-        alt="Two people doing rehabilitation exercises with light weights"
+        src="{% getUrl '/assets/images/pexels-kampus-6111625.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+        alt="Physiotherapist guiding a patient with a prosthetic leg through rehabilitation exercises"
         loading="lazy"
         decoding="async"
       />
@@ -98,16 +97,106 @@ tags: "sitemap"
         </ul>
       </div>
     </div>
+    <div id="womens-health" class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/pexels-karola-g-4506166.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+        alt="Physiotherapist assisting a patient with a resistance band exercise"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Women's Health</h2>
+        <ul class="cs-list">
+          <li>Ante &amp; Post-natal Care</li>
+          <li>Pelvic Floor Weakness Treatment</li>
+          <li>Mummy MOT Consultations</li>
+          <li>Women's Pelvic Health Consultations</li>
+        </ul>
+      </div>
+    </div>
 
-  </div>
+    <div id="podiatry" class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/pexels-yankrukov-5793896.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+        alt="Podiatrist treating a patient's foot"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Podiatry</h2>
+        <ul class="cs-list">
+          <li>Routine Foot &amp; Nail Care</li>
+          <li>Diabetic &amp; Rheumatoid Foot Care</li>
+          <li>Biomechanics &amp; Sports-Related Problems</li>
+          <li>Insoles &amp; Orthotic Management</li>
+          <li>Heel Pain</li>
+        </ul>
+      </div>
+    </div>
 
-  <div class="cs-container">
-    <h2 class="cs-title">Women's Health</h2>
-    <p class="cs-text">
-      Ante &amp; Post-natal care, and treatment for pelvic floor weakness,
-      including our Mummy MOT service. See our
-      <a href="/services/">Services</a> page for pricing.
-    </p>
+    <div id="pilates" class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/pexels-klaus-nielsen-6303422.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+        alt="Rolling out a yoga mat for a Pilates class"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Pilates</h2>
+        <ul class="cs-list">
+          <li>Physiotherapist &amp; Instructor-led Classes</li>
+          <li>Strengthens Core &amp; Improves Flexibility</li>
+          <li>1:1 or Small Group Rehabilitation</li>
+          <li>APPI-accredited</li>
+        </ul>
+        <p class="cs-text">
+          Thursdays 12.15pm @ Abbey Hall, North Berwick &mdash;
+          <a href="/contact/">contact us</a> to book.
+        </p>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/pexels-ai25studioai-6076136.jpg' | resize({ width: 500, height: 400, position: 'attention' }) | jpeg %}"
+        alt="Kinesiology taping for a sports injury"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Sports & Soft Tissue Treatment</h2>
+        <p class="cs-text">
+          Taping, manual therapy and rehabilitation for sports injuries and soft
+          tissue problems.
+        </p>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <img
+        src="{% getUrl '/assets/images/alterfines-acupuncture-4175625_1920.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+        alt="Acupuncture needles being applied to a patient's back"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Acupuncture & Massage Therapy</h2>
+        <p class="cs-text">
+          Acupuncture (offered by Roz Waddell), massage therapy and health
+          screening alongside your physiotherapy plan.
+        </p>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-card-body">
+        <h2 class="cs-card-title">Hypnotherapy</h2>
+        <p class="cs-text">
+          Offered by Keith Barker (Dip AHMTMNCH) &mdash;
+          <a href="/contact/">contact us</a> for more information.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 

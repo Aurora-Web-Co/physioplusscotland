@@ -7,6 +7,7 @@ tags: "sitemap"
 
 {% extends "layouts/base.html" %} {% block head %}
 <link rel="stylesheet" href="/assets/css/services.css" />
+<script defer src="/assets/js/services.js"></script>
 {% endblock %} {% block body %}
 
 <div class="cs-banner">
@@ -21,63 +22,343 @@ tags: "sitemap"
 
 <section id="cs-prices" class="cs-section">
   <div class="cs-container">
-    <h1 class="cs-title">Physiotherapy Services</h1>
-    <table class="cs-price-table">
-      <tbody>
-        <tr><td>Initial Consultation (1 Hour)</td><td>&pound;80</td></tr>
-        <tr><td>Follow-up Consultation (45 mins)</td><td>&pound;65</td></tr>
-        <tr><td>Follow-up Appointment (1/2 Hour)</td><td>&pound;50</td></tr>
-        <tr><td>Domiciliary Visit (1 Hour)</td><td>from &pound;95</td></tr>
-        <tr><td>Podiatry / Chiropody &mdash; Full Foot Consultation</td><td>&pound;40</td></tr>
-        <tr><td>Podiatry / Chiropody &mdash; Nail Cutting Services</td><td>from &pound;25</td></tr>
-        <tr><td>Mummy MOT Initial Consultation (75 mins)</td><td>&pound;100</td></tr>
-        <tr><td>Mummy MOT Follow-Up Consultation (45 mins)</td><td>&pound;75</td></tr>
-        <tr><td>Women's Pelvic Health Initial Consultation (60 mins)</td><td>&pound;85</td></tr>
-        <tr><td>Women's Pelvic Health Follow-Up (45 mins)</td><td>&pound;75</td></tr>
-      </tbody>
-    </table>
+    <div class="cs-price-accordion">
+      <details class="cs-price-category">
+        <summary>
+          <span>Physiotherapy</span>
+          <svg
+            class="cs-price-arrow"
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1l4 4 4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </summary>
+        <div class="cs-price-content">
+          <table class="cs-price-table">
+          <tbody>
+            <tr>
+              <td>Initial Consultation (1 Hour)</td>
+              <td>&pound;80</td>
+            </tr>
+            <tr>
+              <td>Follow-up Consultation (45 mins)</td>
+              <td>&pound;65</td>
+            </tr>
+            <tr>
+              <td>Follow-up Appointment (1/2 Hour)</td>
+              <td>&pound;50</td>
+            </tr>
+            <tr>
+              <td>Domiciliary Visit (1 Hour)</td>
+              <td>from &pound;95</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </details>
+
+      <details class="cs-price-category">
+        <summary>
+          <span>Podiatry / Chiropody</span>
+          <svg
+            class="cs-price-arrow"
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1l4 4 4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </summary>
+        <div class="cs-price-content">
+          <table class="cs-price-table">
+          <tbody>
+            <tr>
+              <td>Full Foot Consultation</td>
+              <td>&pound;40</td>
+            </tr>
+            <tr>
+              <td>Nail Cutting Services</td>
+              <td>from &pound;25</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </details>
+
+      <details class="cs-price-category">
+        <summary>
+          <span>Mummy MOT</span>
+          <svg
+            class="cs-price-arrow"
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1l4 4 4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </summary>
+        <div class="cs-price-content">
+          <table class="cs-price-table">
+          <tbody>
+            <tr>
+              <td>Initial Consultation (75 mins)</td>
+              <td>&pound;100</td>
+            </tr>
+            <tr>
+              <td>Follow-Up Consultation (45 mins)</td>
+              <td>&pound;75</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </details>
+
+      <details class="cs-price-category">
+        <summary>
+          <span>Women's Pelvic Health</span>
+          <svg
+            class="cs-price-arrow"
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1l4 4 4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </summary>
+        <div class="cs-price-content">
+          <table class="cs-price-table">
+          <tbody>
+            <tr>
+              <td>Initial Consultation (60 mins)</td>
+              <td>&pound;85</td>
+            </tr>
+            <tr>
+              <td>Follow-Up (45 mins)</td>
+              <td>&pound;75</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </details>
+
+      <details class="cs-price-category">
+        <summary>
+          <span>Scar Therapy</span>
+          <svg
+            class="cs-price-arrow"
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1l4 4 4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </summary>
+        <div class="cs-price-content">
+          <table class="cs-price-table">
+          <tbody>
+            <tr>
+              <td>Initial Assessment</td>
+              <td>
+                <a
+                  href="https://physiotherapyplusscotland.connect.tm3app.com/book"
+                  target="_blank"
+                  rel="noopener"
+                  >Book to see pricing</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Follow-Up (45 mins)</td>
+              <td>
+                <a
+                  href="https://physiotherapyplusscotland.connect.tm3app.com/book"
+                  target="_blank"
+                  rel="noopener"
+                  >Book to see pricing</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </details>
+
+      <details class="cs-price-category">
+        <summary>
+          <span>Acupuncture</span>
+          <svg
+            class="cs-price-arrow"
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1l4 4 4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </summary>
+        <div class="cs-price-content">
+          <table class="cs-price-table">
+          <tbody>
+            <tr>
+              <td>Initial Assessment (60 mins)</td>
+              <td>
+                <a
+                  href="https://physiotherapyplusscotland.connect.tm3app.com/book"
+                  target="_blank"
+                  rel="noopener"
+                  >Book to see pricing</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Follow-Up Appointment (45 mins)</td>
+              <td>
+                <a
+                  href="https://physiotherapyplusscotland.connect.tm3app.com/book"
+                  target="_blank"
+                  rel="noopener"
+                  >Book to see pricing</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </details>
+
+      <details class="cs-price-category">
+        <summary>
+          <span>Pilates</span>
+          <svg
+            class="cs-price-arrow"
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1l4 4 4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </summary>
+        <div class="cs-price-content">
+          <table class="cs-price-table">
+          <tbody>
+            <tr>
+              <td>1:1 Class (60 mins)</td>
+              <td>
+                <a
+                  href="https://physiotherapyplusscotland.connect.tm3app.com/book"
+                  target="_blank"
+                  rel="noopener"
+                  >Book to see pricing</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </details>
+
+      <details class="cs-price-category">
+        <summary>
+          <span>Hypnotherapy</span>
+          <svg
+            class="cs-price-arrow"
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1l4 4 4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </summary>
+        <div class="cs-price-content">
+          <table class="cs-price-table">
+          <tbody>
+            <tr>
+              <td>Consultation</td>
+              <td>
+                <a
+                  href="https://physiotherapyplusscotland.connect.tm3app.com/book"
+                  target="_blank"
+                  rel="noopener"
+                  >Book to see pricing</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </details>
+    </div>
     <p class="cs-text">
       All Physiotherapists are Chartered Physiotherapists, Registered with the
       Health and Care Professions Council and approved by all major insurance
-      companies.
+      companies. See our <a href="/what-we-do/">What We Do</a> page for full
+      details of the conditions and services we treat.
     </p>
-  </div>
-
-  <div class="cs-container cs-grid cs-grid-2">
-    <div class="cs-card">
-      <img
-        src="{% getUrl '/assets/images/pexels-ai25studioai-6076136.jpg' | resize({ width: 700, height: 450, position: 'attention' }) | jpeg %}"
-        alt="Kinesiology taping for a sports injury"
-        loading="lazy"
-        decoding="async"
-      />
-      <div class="cs-card-body">
-        <h2 class="cs-card-title">Sports & Soft Tissue Treatment</h2>
-        <p class="cs-text">Taping, manual therapy and rehabilitation for sports injuries and soft tissue problems.</p>
-      </div>
-    </div>
-    <div class="cs-card">
-      <img
-        src="{% getUrl '/assets/images/pexels-funkcines-terapijos-centras-927573878-20860623.jpg' | resize({ width: 700, height: 450 }) | jpeg %}"
-        alt="Physiotherapy treatment session"
-        loading="lazy"
-        decoding="async"
-      />
-      <div class="cs-card-body">
-        <h2 class="cs-card-title">Acupuncture & Massage Therapy</h2>
-        <p class="cs-text">Acupuncture, massage therapy and health screening alongside your physiotherapy plan.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="cs-container">
-    <img
-      class="cs-badge"
-      src="{% getUrl '/assets/images/mummy-mot-badge.png' | resize({ width: 300 }) | png %}"
-      alt="Mummy MOT accredited practitioner badge"
-      loading="lazy"
-      decoding="async"
-    />
   </div>
 </section>
 

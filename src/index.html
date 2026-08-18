@@ -18,7 +18,13 @@ tags: "sitemap"
       registered with the Health and Care Professions Council, the Chartered
       Society of Physiotherapy, and recognised as a Physio First Centre.
     </p>
-    <a class="cs-button-solid" href="{{ client.bookingUrl }}" target="_blank" rel="noopener">Book Now</a>
+    <a
+      class="cs-button-solid"
+      href="{{ client.bookingUrl }}"
+      target="_blank"
+      rel="noopener"
+      >Book Now</a
+    >
   </div>
 </section>
 
@@ -34,7 +40,7 @@ tags: "sitemap"
       <span class="cs-banner-title">What We Do</span>
     </div>
   </a>
-  <a class="cs-banner-link" href="/pilates/">
+  <a class="cs-banner-link" href="/what-we-do/#pilates">
     <div class="cs-banner">
       <img
         src="{% getUrl '/assets/images/logan-weaver-lgnwvr-u76Gd0hP5w4-unsplash.jpg' | resize({ width: 700, height: 500 }) | jpeg %}"
@@ -42,7 +48,7 @@ tags: "sitemap"
         loading="lazy"
         decoding="async"
       />
-      <span class="cs-banner-title">Pilates</span>
+      <span class="cs-banner-title">Prices</span>
     </div>
   </a>
   <a class="cs-banner-link" href="/contact/">
@@ -64,7 +70,9 @@ tags: "sitemap"
     <ul class="cs-list cs-text">
       <li>Identify your condition</li>
       <li>Work with you to find the best solution</li>
-      <li>Provide you with expert treatment and advice to maximise your potential</li>
+      <li>
+        Provide you with expert treatment and advice to maximise your potential
+      </li>
       <li>Offer prompt and efficient care for busy people</li>
     </ul>
     <p class="cs-text">
@@ -74,42 +82,6 @@ tags: "sitemap"
       and 1:1 Pilates.
     </p>
   </div>
-</section>
-
-<section id="cs-squares" class="cs-container cs-grid cs-grid-3">
-  <a class="cs-card" href="/meet-the-team/">
-    <img
-      src="{% getUrl '/assets/images/pexels-kampus-6111625.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
-      alt="Physiotherapist assisting a patient with rehabilitation"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="cs-card-body">
-      <h3 class="cs-card-title">Meet The Team</h3>
-    </div>
-  </a>
-  <a class="cs-card" href="/services/">
-    <img
-      src="{% getUrl '/assets/images/alterfines-acupuncture-4175625_1920.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
-      alt="Acupuncture treatment"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="cs-card-body">
-      <h3 class="cs-card-title">Our Services</h3>
-    </div>
-  </a>
-  <a class="cs-card" href="/what-we-do/">
-    <img
-      src="{% getUrl '/assets/images/pexels-karola-g-4506161.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
-      alt="Physiotherapist examining a patient's neck and shoulder"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="cs-card-body">
-      <h3 class="cs-card-title">What We Do</h3>
-    </div>
-  </a>
 </section>
 
 <section id="cs-spine" class="cs-container cs-grid cs-grid-2">
@@ -124,13 +96,13 @@ tags: "sitemap"
     <h2 class="cs-title">Whatever's holding you back</h2>
     <p class="cs-text">
       From low back pain and sciatica to sports injuries and post-surgery
-      rehabilitation, our Chartered Physiotherapists identify the cause of
-      your problem and work with you to get you moving again.
+      rehabilitation, our Chartered Physiotherapists identify the cause of your
+      problem and work with you to get you moving again.
     </p>
   </div>
 </section>
 
-<a class="cs-banner-link" href="/pilates/">
+<a class="cs-banner-link" href="/what-we-do">
   <div class="cs-banner">
     <img
       src="{% getUrl '/assets/images/pexels-funkcines-terapijos-centras-927573878-20860603.jpg' | resize({ width: 1600, height: 700 }) | jpeg %}"
@@ -138,12 +110,12 @@ tags: "sitemap"
       loading="eager"
       decoding="async"
     />
-    <span class="cs-banner-title">Pilates</span>
+    <span class="cs-banner-title">What we offer</span>
   </div>
 </a>
 
 <section id="cs-rectangles" class="cs-container cs-grid cs-grid-2">
-  <a class="cs-card" href="/podiatry/">
+  <a class="cs-card" href="/what-we-do">
     <img
       src="{% getUrl '/assets/images/toralf-thomassen-5S40ixhBK-I-unsplash.jpg' | resize({ width: 700, height: 450 }) | jpeg %}"
       alt="Podiatrist examining a patient's foot"
@@ -151,20 +123,23 @@ tags: "sitemap"
       decoding="async"
     />
     <div class="cs-card-body">
-      <h3 class="cs-card-title">Podiatry</h3>
-      <p class="cs-text">The Podiatry services we offer will meet your needs & requirements.</p>
+      <h3 class="cs-card-title">What We Do</h3>
+      <p class="cs-text">
+        Take a look at a range of our services and what we do here at
+        Physiotherapy Plus.
+      </p>
     </div>
   </a>
-  <a class="cs-card" href="/what-we-do/">
+  <a class="cs-card" href="/services/">
     <img
-      src="{% getUrl '/assets/images/pexels-worldsikhorg-14797760.jpg' | resize({ width: 700, height: 450 }) | jpeg %}"
-      alt="Physiotherapist consultation using a spine model"
+      src="{% getUrl '/assets/images/toa-heftiba-a9pFSC8dTlo-unsplash.jpg' | resize({ width: 700, height: 450, position: 'attention' }) | jpeg %}"
+      alt="Hands-on physiotherapy treatment"
       loading="lazy"
       decoding="async"
     />
     <div class="cs-card-body">
-      <h3 class="cs-card-title">What We Do</h3>
-      <p class="cs-text">Take a look at a range of our services and what we do here at Physiotherapy Plus.</p>
+      <h3 class="cs-card-title">Prices</h3>
+      <p class="cs-text">See all of our prices for the services we offer.</p>
     </div>
   </a>
 </section>

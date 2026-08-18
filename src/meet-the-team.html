@@ -7,6 +7,7 @@ tags: "sitemap"
 
 {% extends "layouts/base.html" %} {% block head %}
 <link rel="stylesheet" href="/assets/css/meet-the-team.css" />
+<script defer src="/assets/js/meet-the-team.js"></script>
 {% endblock %} {% block body %}
 
 <div class="cs-banner">
@@ -21,140 +22,255 @@ tags: "sitemap"
 
 <section id="cs-team" class="cs-section">
   <div class="cs-container cs-grid cs-grid-7">
+    <div class="cs-profile">
+      <button type="button" class="cs-profile-toggle" aria-haspopup="dialog">
+        <img
+          src="{% getUrl '/assets/images/team/craig-spinks.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+          alt="Craig Spinks"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="cs-profile-plus" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <h2 class="cs-profile-name">Craig Spinks</h2>
+      <span class="cs-profile-title"
+        >Practise owner / Physiotherapist MCSP</span
+      >
+      <p class="cs-profile-bio" hidden>
+        Craig is the owner of the physiotherapy practice and holds a first-class
+        honours degree in Sports Science from the University of Abertay, as well
+        as a master’s degree in Physiotherapy from Queen Margaret University. He
+        specialises in musculoskeletal physiotherapy and biomechanics, with
+        particular interests in golf-related injuries, performance and lower
+        back pain. Craig has experience treating a wide range of musculoskeletal
+        conditions, helping patients recover from injury, manage pain and get
+        back to the activities they enjoy. He also works with golfers of all
+        levels, combining his physiotherapy and biomechanics background to
+        assess and treat injuries, improve movement and support performance. In
+        2023, Craig achieved accreditation as a McKenzie Method practitioner,
+        further developing his expertise in the assessment and treatment of
+        lower back pain and spinal conditions. He takes a straightforward,
+        individualised approach to physiotherapy, with a focus on helping people
+        understand their condition, move well and stay active.
+      </p>
+    </div>
 
     <div class="cs-profile">
-      <img
-        src="{% getUrl '/assets/images/team/josie-marshall.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
-        alt="Josie Marshall"
-        loading="lazy"
-        decoding="async"
-      />
+      <button type="button" class="cs-profile-toggle" aria-haspopup="dialog">
+        <img
+          src="{% getUrl '/assets/images/team/rachael-valentine.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+          alt="Rachael Valentine"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="cs-profile-plus" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <h2 class="cs-profile-name">Rachael Valentine</h2>
+      <span class="cs-profile-title">Physiotherapist MCSP</span>
+      <p class="cs-profile-bio" hidden>
+        After qualifying as a Chartered Physiotherapist in 1998, Rachael
+        completed NHS rotations in Outpatients, Orthopaedics, Respiratory and
+        Neurology before specialising as a Senior Physiotherapist in Outpatients
+        and Orthopaedics. Rachael is a fully certified APPI Pilates Mat Work
+        instructor and offers Ante and Post Natal Pilates Rehabilitation, and is
+        a member of the Association of Physiotherapists in Sports and Exercise
+        Medicine. In her spare time Rachael is a keen runner, training and
+        racing distances from 5km to full marathons.
+      </p>
+    </div>
+
+    <div class="cs-profile">
+      <button type="button" class="cs-profile-toggle" aria-haspopup="dialog">
+        <img
+          src="{% getUrl '/assets/images/team/roz-waddell.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+          alt="Roz Waddell"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="cs-profile-plus" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <h2 class="cs-profile-name">Roz Waddell</h2>
+      <span class="cs-profile-title">Physiotherapist MCSP</span>
+      <p class="cs-profile-bio" hidden>
+        Roz qualified in 2003 with an MSc in Physiotherapy from Glasgow
+        Caledonian University and spent 16 years in the musculoskeletal sector,
+        with particular interests in spinal rehabilitation, sports injuries, and
+        pre/post-op rehabilitation. Roz is a certified Pilates Matwork
+        Instructor through the APPI, qualified in Orthopaedic Medicine, and is
+        also qualified in acupuncture as a member of the AACP. In her spare
+        time, Roz loves spending time with her daughters in the East Lothian
+        countryside.
+      </p>
+    </div>
+
+    <div class="cs-profile">
+      <button type="button" class="cs-profile-toggle" aria-haspopup="dialog">
+        <img
+          src="{% getUrl '/assets/images/team/josie-marshall.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+          alt="Josie Marshall"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="cs-profile-plus" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+      </button>
       <h2 class="cs-profile-name">Josie Marshall</h2>
       <span class="cs-profile-title">Physiotherapist MCSP</span>
-      <p class="cs-profile-bio">
+      <p class="cs-profile-bio" hidden>
         Since graduating from Glasgow Caledonian University, Josie has gained
-        valuable experience working in the public sector/NHS for over 14
-        years. She was part of the Physiotherapy team for Jersey Reds Rugby
-        Club and was lead sports therapist for Glasgow City Ladies Football
-        Club. For the last 5 years she has specialised in Pelvic Health
-        Physiotherapy, helping women overcome pelvic floor dysfunction as well
-        as common antenatal and postnatal conditions. She is a Mummy MOT
-        practitioner and an affiliate member of Pelvic Obstetric and
-        Gynaecology Physiotherapy (POGP) as well as a registered member of the
-        Chartered Society of Physiotherapy (CSP).
+        valuable experience working in the public sector/NHS for over 14 years.
+        She was part of the Physiotherapy team for Jersey Reds Rugby Club and
+        was lead sports therapist for Glasgow City Ladies Football Club. For the
+        last 5 years she has specialised in Pelvic Health Physiotherapy, helping
+        women overcome pelvic floor dysfunction as well as common antenatal and
+        postnatal conditions. She is a Mummy MOT practitioner and an affiliate
+        member of Pelvic Obstetric and Gynaecology Physiotherapy (POGP) as well
+        as a registered member of the Chartered Society of Physiotherapy (CSP).
       </p>
     </div>
 
     <div class="cs-profile">
-      <img
-        src="{% getUrl '/assets/images/team/gillian-anderson.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
-        alt="Gillian Anderson"
-        loading="lazy"
-        decoding="async"
-      />
+      <button type="button" class="cs-profile-toggle" aria-haspopup="dialog">
+        <img
+          src="{% getUrl '/assets/images/team/gillian-anderson.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+          alt="Gillian Anderson"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="cs-profile-plus" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+      </button>
       <h2 class="cs-profile-name">Gillian Anderson</h2>
       <span class="cs-profile-title">Clinic Manager</span>
-      <p class="cs-profile-bio">
-        Gillian is our practice manager and has run our clinic for 18 years.
-        She will greet you at reception with a warm smile and support you on
-        your first visit. Gillian is well known locally, having previously
-        worked in a dental surgery as nurse/manager and as a nursing
-        assistant. She is also an experienced hair dresser. When she is not
-        working she enjoys family life and many local bike rides on her
-        e-bike.
+      <p class="cs-profile-bio" hidden>
+        Gillian is our practice manager and has run our clinic for 18 years. She
+        will greet you at reception with a warm smile and support you on your
+        first visit. Gillian is well known locally, having previously worked in
+        a dental surgery as nurse/manager and as a nursing assistant. She is
+        also an experienced hair dresser. When she is not working she enjoys
+        family life and many local bike rides on her e-bike.
       </p>
     </div>
 
     <div class="cs-profile">
-      <div class="cs-profile-placeholder" aria-hidden="true">KB</div>
+      <button type="button" class="cs-profile-toggle" aria-haspopup="dialog">
+        <img
+          src="{% getUrl '/assets/images/team/sally-brown.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+          alt="Sally Brown"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="cs-profile-plus" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <h2 class="cs-profile-name">Sally Brown</h2>
+      <span class="cs-profile-title">Podiatrist</span>
+      <p class="cs-profile-bio" hidden>
+        Sally is our podiatrist who holds her clinic on a Friday morning. She
+        qualified 30 years ago in Durham and has held various posts within NHS
+        Lothian and private practice, offering a full range of treatments
+        including general foot care, biomechanical assessments and treatment for
+        ingrowing nails, with a particular interest in diabetic foot care and
+        nail surgery.
+      </p>
+    </div>
+
+    <div class="cs-profile">
+      <button type="button" class="cs-profile-toggle" aria-haspopup="dialog">
+        <div class="cs-profile-placeholder" aria-hidden="true">KB</div>
+        <span class="cs-profile-plus" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+      </button>
       <h2 class="cs-profile-name">Keith Barker</h2>
       <span class="cs-profile-title">Hypnotherapy Dip (AHMTMNCH)</span>
-      <p class="cs-profile-bio">
+      <p class="cs-profile-bio" hidden>
         Photo and full bio coming soon &mdash; please contact us for more
         information about our hypnotherapy service.
       </p>
     </div>
+  </div>
 
-    <div class="cs-profile">
-      <img
-        src="{% getUrl '/assets/images/team/rachael-valentine.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
-        alt="Rachael Valentine"
-        loading="lazy"
-        decoding="async"
-      />
-      <h2 class="cs-profile-name">Rachael Valentine</h2>
-      <span class="cs-profile-title">Physiotherapist MCSP</span>
-      <p class="cs-profile-bio">
-        After qualifying as a Chartered Physiotherapist in 1998, Rachael
-        completed NHS rotations in Outpatients, Orthopaedics, Respiratory and
-        Neurology before specialising as a Senior Physiotherapist in
-        Outpatients and Orthopaedics. Rachael is a fully certified APPI
-        Pilates Mat Work instructor and offers Ante and Post Natal Pilates
-        Rehabilitation, and is a member of the Association of Physiotherapists
-        in Sports and Exercise Medicine. In her spare time Rachael is a keen
-        runner, training and racing distances from 5km to full marathons.
-      </p>
+  <div class="cs-profile-modal" id="cs-profile-modal" hidden>
+    <div class="cs-profile-modal-backdrop" data-modal-close></div>
+    <div
+      class="cs-profile-modal-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cs-profile-modal-name"
+    >
+      <button
+        type="button"
+        class="cs-profile-modal-close"
+        data-modal-close
+        aria-label="Close bio"
+      >
+        &times;
+      </button>
+      <img class="cs-profile-modal-img" src="" alt="" hidden />
+      <div class="cs-profile-modal-placeholder" aria-hidden="true" hidden></div>
+      <h2 class="cs-profile-modal-name" id="cs-profile-modal-name"></h2>
+      <span class="cs-profile-modal-title"></span>
+      <p class="cs-profile-modal-bio"></p>
     </div>
-
-    <div class="cs-profile">
-      <img
-        src="{% getUrl '/assets/images/team/roz-waddell.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
-        alt="Roz Waddell"
-        loading="lazy"
-        decoding="async"
-      />
-      <h2 class="cs-profile-name">Roz Waddell</h2>
-      <span class="cs-profile-title">Physiotherapist MCSP</span>
-      <p class="cs-profile-bio">
-        Roz qualified in 2003 with an MSc in Physiotherapy from Glasgow
-        Caledonian University and spent 16 years in the musculoskeletal
-        sector, with particular interests in spinal rehabilitation, sports
-        injuries, and pre/post-op rehabilitation. Roz is a certified Pilates
-        Matwork Instructor through the APPI, qualified in Orthopaedic
-        Medicine, and is also qualified in acupuncture as a member of the
-        AACP. In her spare time, Roz loves spending time with her daughters in
-        the East Lothian countryside.
-      </p>
-    </div>
-
-    <div class="cs-profile">
-      <img
-        src="{% getUrl '/assets/images/team/sally-brown.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
-        alt="Sally Brown"
-        loading="lazy"
-        decoding="async"
-      />
-      <h2 class="cs-profile-name">Sally Brown</h2>
-      <span class="cs-profile-title">Podiatrist</span>
-      <p class="cs-profile-bio">
-        Sally is our podiatrist who holds her clinic on a Friday morning. She
-        qualified 30 years ago in Durham and has held various posts within NHS
-        Lothian and private practice, offering a full range of treatments
-        including general foot care, biomechanical assessments and treatment
-        for ingrowing nails, with a particular interest in diabetic foot care
-        and nail surgery.
-      </p>
-    </div>
-
-    <div class="cs-profile">
-      <img
-        src="{% getUrl '/assets/images/team/craig-spinks.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
-        alt="Craig Spinks"
-        loading="lazy"
-        decoding="async"
-      />
-      <h2 class="cs-profile-name">Craig Spinks</h2>
-      <span class="cs-profile-title">Physiotherapist MCSP</span>
-      <p class="cs-profile-bio">
-        Craig holds a first-class honours degree in sports science from the
-        University of Abertay and a master's degree in physiotherapy from
-        Queen Margaret University. He ultimately specialised in
-        musculoskeletal physiotherapy and biomechanics, and in 2023 achieved
-        accreditation as a McKenzie Method practitioner, broadening his
-        expertise in the assessment and treatment of lower back pain.
-      </p>
-    </div>
-
   </div>
 </section>
 
@@ -162,14 +278,13 @@ tags: "sitemap"
   <div class="cs-container">
     <h2 class="cs-title">Join The Team</h2>
     <p class="cs-text">
-      If you are a highly motivated Chartered Physiotherapist and would like
-      to join our team, please
+      If you are a highly motivated Chartered Physiotherapist and would like to
+      join our team, please
       <a href="/contact/">get in touch</a>. We require a minimum of 5 years
       experience in musculoskeletal physiotherapy &mdash; acupuncture and
-      knowledge of Pilates would be advantageous. We also have space
-      available for other health professionals who would like to work from
-      our clinic. Please
-      <a href="/contact/">get in touch</a> for more details.
+      knowledge of Pilates would be advantageous. We also have space available
+      for other health professionals who would like to work from our clinic.
+      Please <a href="/contact/">get in touch</a> for more details.
     </p>
   </div>
 </section>

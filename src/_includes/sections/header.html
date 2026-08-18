@@ -17,11 +17,40 @@
       <ul class="cs-nav-list">
         <li><a class="cs-nav-link" href="/">Home</a></li>
         <li><a class="cs-nav-link" href="/meet-the-team/">Meet The Team</a></li>
-        <li><a class="cs-nav-link" href="/what-we-do/">What We Do</a></li>
-        <li><a class="cs-nav-link" href="/pilates/">Pilates</a></li>
-        <li><a class="cs-nav-link" href="/podiatry/">Podiatry</a></li>
-        <li><a class="cs-nav-link" href="/services/">Services</a></li>
-        <li><a class="cs-nav-link" href="/areas-we-cover/">Areas We Cover</a></li>
+        <li class="cs-dropdown">
+          <button
+            class="cs-nav-link cs-dropdown-toggle"
+            aria-expanded="false"
+            aria-controls="cs-services-dropdown"
+          >
+            Services
+            <svg
+              class="cs-dropdown-arrow"
+              width="10"
+              height="6"
+              viewBox="0 0 10 6"
+              aria-hidden="true"
+            >
+              <path
+                d="M1 1l4 4 4-4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <ul class="cs-dropdown-list" id="cs-services-dropdown">
+            <li>
+              <a class="cs-dropdown-link" href="/what-we-do/">What We Do</a>
+            </li>
+            <li><a class="cs-dropdown-link" href="/services/">Prices</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="cs-nav-link" href="/areas-we-cover/">Areas We Cover</a>
+        </li>
         <li><a class="cs-nav-link" href="/testimonials/">Testimonials</a></li>
         <li><a class="cs-nav-link" href="/contact/">Contact Us</a></li>
         <li>

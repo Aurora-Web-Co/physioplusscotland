@@ -1,2 +1,5 @@
 # Netlify redirects
 # https://docs.netlify.com/routing/redirects/
+
+/pilates/   /what-we-do/#pilates    301
+/podiatry/  /what-we-do/#podiatry   301
