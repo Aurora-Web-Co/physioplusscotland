@@ -21,4 +21,7 @@ module.exports = {
   //! Include the file protocol (https://) and NO trailing slash
   domain: "https://physioplusscotland.co.uk",
   isProduction: process.env.ELEVENTY_ENV === "PROD",
+  // Netlify sets CONTEXT on every build; branch deploys and deploy previews
+  // get a noindex tag so client previews never show up in search.
+  noindex: Boolean(process.env.CONTEXT) && process.env.CONTEXT !== "production",
 };

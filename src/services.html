@@ -7,7 +7,6 @@ tags: "sitemap"
 
 {% extends "layouts/base.html" %} {% block head %}
 <link rel="stylesheet" href="/assets/css/services.css" />
-<script defer src="/assets/js/services.js"></script>
 {% endblock %} {% block body %}
 
 <div class="cs-banner">
@@ -52,274 +51,226 @@ tags: "sitemap"
 
 <section id="cs-prices" class="cs-section">
   <div class="cs-container">
-    <div class="cs-price-accordion">
-      <details class="cs-price-category">
+    <div class="cs-price-ledger">
+      <details class="cs-price-service">
         <summary>
-          <span>Physiotherapy</span>
-          <svg
-            class="cs-price-arrow"
-            width="10"
-            height="6"
-            viewBox="0 0 10 6"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 1l4 4 4-4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <span class="cs-price-service-name">Physiotherapy</span>
+          <span class="cs-price-service-count">5 appointments</span>
+          <span class="cs-price-service-from">from &pound;50</span>
+          <svg class="cs-price-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+            <path class="cs-price-icon-v" d="M7 1v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
           </svg>
         </summary>
-        <div class="cs-price-content">
-          <table class="cs-price-table">
-            <tbody>
-              <tr>
-                <td>Initial Consultation (1 Hour)</td>
-                <td>&pound;80</td>
-              </tr>
-              <tr>
-                <td>Follow-up Consultation (45 mins)</td>
-                <td>&pound;65</td>
-              </tr>
-              <tr>
-                <td>Follow-up Appointment (1/2 Hour)</td>
-                <td>&pound;50</td>
-              </tr>
-              <tr>
-                <td>Initial Domiciliary Visit</td>
-                <td>&pound;90</td>
-              </tr>
-              <tr>
-                <td>Follow-up Domiciliary Visit</td>
-                <td>&pound;75</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="cs-price-table">
+          <caption class="cs-visually-hidden">Physiotherapy prices</caption>
+          <thead class="cs-visually-hidden">
+            <tr><th scope="col">Appointment</th><th scope="col">Length</th><th scope="col">Price</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Initial consultation</th>
+              <td class="cs-price-length">1 hour</td>
+              <td class="cs-price-value">&pound;80</td>
+            </tr>
+            <tr>
+              <th scope="row">Follow-up consultation</th>
+              <td class="cs-price-length">45 mins</td>
+              <td class="cs-price-value">&pound;65</td>
+            </tr>
+            <tr>
+              <th scope="row">Follow-up appointment</th>
+              <td class="cs-price-length">30 mins</td>
+              <td class="cs-price-value">&pound;50</td>
+            </tr>
+            <tr>
+              <th scope="row">Initial domiciliary visit</th>
+              <td class="cs-price-length"></td>
+              <td class="cs-price-value">&pound;90</td>
+            </tr>
+            <tr>
+              <th scope="row">Follow-up domiciliary visit</th>
+              <td class="cs-price-length"></td>
+              <td class="cs-price-value">&pound;75</td>
+            </tr>
+          </tbody>
+        </table>
       </details>
-
-      <details class="cs-price-category">
+      <details class="cs-price-service">
         <summary>
-          <span>Podiatry</span>
-          <svg
-            class="cs-price-arrow"
-            width="10"
-            height="6"
-            viewBox="0 0 10 6"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 1l4 4 4-4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <span class="cs-price-service-name">Podiatry</span>
+          <span class="cs-price-service-count">2 appointments</span>
+          <span class="cs-price-service-from">from &pound;25</span>
+          <svg class="cs-price-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+            <path class="cs-price-icon-v" d="M7 1v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
           </svg>
         </summary>
-        <div class="cs-price-content">
-          <table class="cs-price-table">
-            <tbody>
-              <tr>
-                <td>Full Foot Consultation</td>
-                <td>&pound;40</td>
-              </tr>
-              <tr>
-                <td>Nail Cutting Services</td>
-                <td>&pound;25</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="cs-price-table">
+          <caption class="cs-visually-hidden">Podiatry prices</caption>
+          <thead class="cs-visually-hidden">
+            <tr><th scope="col">Appointment</th><th scope="col">Length</th><th scope="col">Price</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Full foot consultation</th>
+              <td class="cs-price-length"></td>
+              <td class="cs-price-value">&pound;40</td>
+            </tr>
+            <tr>
+              <th scope="row">Nail cutting</th>
+              <td class="cs-price-length"></td>
+              <td class="cs-price-value">&pound;25</td>
+            </tr>
+          </tbody>
+        </table>
       </details>
-
-      <details class="cs-price-category">
+      <details class="cs-price-service">
         <summary>
-          <span>Scar Therapy</span>
-          <svg
-            class="cs-price-arrow"
-            width="10"
-            height="6"
-            viewBox="0 0 10 6"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 1l4 4 4-4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <span class="cs-price-service-name">Scar Therapy</span>
+          <span class="cs-price-service-count">2 appointments</span>
+          <span class="cs-price-service-from">from &pound;75</span>
+          <svg class="cs-price-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+            <path class="cs-price-icon-v" d="M7 1v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
           </svg>
         </summary>
-        <div class="cs-price-content">
-          <table class="cs-price-table">
-            <tbody>
-              <tr>
-                <td>Initial Assessment</td>
-                <td>&pound;85</td>
-              </tr>
-              <tr>
-                <td>Follow-up (45 mins)</td>
-                <td>&pound;75</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="cs-price-table">
+          <caption class="cs-visually-hidden">Scar Therapy prices</caption>
+          <thead class="cs-visually-hidden">
+            <tr><th scope="col">Appointment</th><th scope="col">Length</th><th scope="col">Price</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Initial assessment</th>
+              <td class="cs-price-length"></td>
+              <td class="cs-price-value">&pound;85</td>
+            </tr>
+            <tr>
+              <th scope="row">Follow-up</th>
+              <td class="cs-price-length">45 mins</td>
+              <td class="cs-price-value">&pound;75</td>
+            </tr>
+          </tbody>
+        </table>
       </details>
-
-      <details class="cs-price-category">
+      <details class="cs-price-service">
         <summary>
-          <span>Acupuncture</span>
-          <svg
-            class="cs-price-arrow"
-            width="10"
-            height="6"
-            viewBox="0 0 10 6"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 1l4 4 4-4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <span class="cs-price-service-name">Acupuncture</span>
+          <span class="cs-price-service-count">3 appointments</span>
+          <span class="cs-price-service-from">from &pound;55</span>
+          <svg class="cs-price-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+            <path class="cs-price-icon-v" d="M7 1v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
           </svg>
         </summary>
-        <div class="cs-price-content">
-          <table class="cs-price-table">
-            <tbody>
-              <tr>
-                <td>Initial Assessment (60 mins)</td>
-                <td>&pound;85</td>
-              </tr>
-              <tr>
-                <td>Follow-up Assessment (45 mins)</td>
-                <td>&pound;70</td>
-              </tr>
-              <tr>
-                <td>Follow-up Appointment (45 mins)</td>
-                <td>&pound;55</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="cs-price-table">
+          <caption class="cs-visually-hidden">Acupuncture prices</caption>
+          <thead class="cs-visually-hidden">
+            <tr><th scope="col">Appointment</th><th scope="col">Length</th><th scope="col">Price</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Initial assessment</th>
+              <td class="cs-price-length">1 hour</td>
+              <td class="cs-price-value">&pound;85</td>
+            </tr>
+            <tr>
+              <th scope="row">Follow-up assessment</th>
+              <td class="cs-price-length">45 mins</td>
+              <td class="cs-price-value">&pound;70</td>
+            </tr>
+            <tr>
+              <th scope="row">Follow-up appointment</th>
+              <td class="cs-price-length">45 mins</td>
+              <td class="cs-price-value">&pound;55</td>
+            </tr>
+          </tbody>
+        </table>
       </details>
-
-      <details class="cs-price-category">
+      <details class="cs-price-service">
         <summary>
-          <span>Pilates</span>
-          <svg
-            class="cs-price-arrow"
-            width="10"
-            height="6"
-            viewBox="0 0 10 6"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 1l4 4 4-4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <span class="cs-price-service-name">Pilates</span>
+          <span class="cs-price-service-count">1 appointment</span>
+          <span class="cs-price-service-from">&pound;60</span>
+          <svg class="cs-price-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+            <path class="cs-price-icon-v" d="M7 1v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
           </svg>
         </summary>
-        <div class="cs-price-content">
-          <table class="cs-price-table">
-            <tbody>
-              <tr>
-                <td>1:1 Class (60 mins)</td>
-                <td>&pound;60</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="cs-price-table">
+          <caption class="cs-visually-hidden">Pilates prices</caption>
+          <thead class="cs-visually-hidden">
+            <tr><th scope="col">Appointment</th><th scope="col">Length</th><th scope="col">Price</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1:1 class</th>
+              <td class="cs-price-length">1 hour</td>
+              <td class="cs-price-value">&pound;60</td>
+            </tr>
+          </tbody>
+        </table>
       </details>
-
-      <details class="cs-price-category">
+      <details class="cs-price-service">
         <summary>
-          <span>Hypnotherapy</span>
-          <svg
-            class="cs-price-arrow"
-            width="10"
-            height="6"
-            viewBox="0 0 10 6"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 1l4 4 4-4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <span class="cs-price-service-name">Hypnotherapy</span>
+          <span class="cs-price-service-count">1 appointment</span>
+          <span class="cs-price-service-from">Price on booking</span>
+          <svg class="cs-price-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+            <path class="cs-price-icon-v" d="M7 1v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
           </svg>
         </summary>
-        <div class="cs-price-content">
-          <table class="cs-price-table">
-            <tbody>
-              <tr>
-                <td>Consultation</td>
-                <td>
-                  <a
-                    href="https://physiotherapyplusscotland.connect.tm3app.com/book"
-                    target="_blank"
-                    rel="noopener"
-                    >Book to see pricing</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="cs-price-table">
+          <caption class="cs-visually-hidden">Hypnotherapy prices</caption>
+          <thead class="cs-visually-hidden">
+            <tr><th scope="col">Appointment</th><th scope="col">Length</th><th scope="col">Price</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Consultation</th>
+              <td class="cs-price-length"></td>
+              <td class="cs-price-value">
+                <a href="{{ client.bookingUrl }}/book" target="_blank" rel="noopener"
+                  >Book to see pricing</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </details>
-      <details class="cs-price-category">
+      <details class="cs-price-service">
         <summary>
-          <span>Massage</span>
-          <svg
-            class="cs-price-arrow"
-            width="10"
-            height="6"
-            viewBox="0 0 10 6"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 1l4 4 4-4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <span class="cs-price-service-name">Massage</span>
+          <span class="cs-price-service-count">2 appointments</span>
+          <span class="cs-price-service-from">from &pound;50</span>
+          <svg class="cs-price-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+            <path class="cs-price-icon-v" d="M7 1v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
           </svg>
         </summary>
-        <div class="cs-price-content">
-          <table class="cs-price-table">
-            <tbody>
-              <tr>
-                <td>Sports Massage (1 hour)</td>
-                <td>&pound;60</td>
-              </tr>
-              <tr>
-                <td>Follow-up (45 mins)</td>
-                <td>&pound;50</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="cs-price-table">
+          <caption class="cs-visually-hidden">Massage prices</caption>
+          <thead class="cs-visually-hidden">
+            <tr><th scope="col">Appointment</th><th scope="col">Length</th><th scope="col">Price</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Sports massage</th>
+              <td class="cs-price-length">1 hour</td>
+              <td class="cs-price-value">&pound;60</td>
+            </tr>
+            <tr>
+              <th scope="row">Follow-up</th>
+              <td class="cs-price-length">45 mins</td>
+              <td class="cs-price-value">&pound;50</td>
+            </tr>
+          </tbody>
+        </table>
       </details>
     </div>
-    <p class="cs-text">
+    <p class="cs-text cs-price-note">
       All Physiotherapists are Chartered Physiotherapists, Registered with the
       Health and Care Professions Council and approved by all major insurance
       companies. See our <a href="/what-we-do/">What We Do</a> page for full

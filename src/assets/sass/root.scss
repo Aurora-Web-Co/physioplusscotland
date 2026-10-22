@@ -165,20 +165,23 @@
 
     .banner-left {
       display: flex;
-      gap: 0.75rem 1.25rem;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.25rem;
       list-style: none;
       margin: 0;
     }
+    /* Address is in the footer and on Contact; phones get phone + email only. */
     .banner-right {
-      display: flex;
+      display: none;
       gap: 0.75rem 1.25rem;
       list-style: none;
       margin: 0;
     }
 
     .banner-link {
-      font-size: clamp(0.5rem, 0.8vw, 1rem);
+      font-size: 0.8125rem;
       font-weight: 600;
+      white-space: nowrap;
       color: var(--primaryLight);
       text-decoration: none;
       transition: color 0.2s ease;
@@ -529,6 +532,10 @@
 }
 
 @media only screen and (min-width: 48rem) {
+  #banner .banner-right {
+    display: flex;
+  }
+
   #cs-footer {
     .cs-container {
       grid-template-columns: 1fr 1fr 1fr;
