@@ -1,6 +1,12 @@
 /* Services page styles */
 
 @media only screen and (min-width: 0px) {
+  /* Paper band so the new intro reads distinct from the grey page background,
+     matching the homepage's alternating section rhythm. */
+  #cs-prices-intro {
+    background: var(--bg-card);
+  }
+
   .cs-price-accordion {
     max-width: 48rem;
     margin: 1.5rem auto;
@@ -74,7 +80,9 @@
     }
     td:last-child {
       text-align: right;
-      font-weight: 700;
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      font-weight: 600;
       padding-left: 1rem;
       a {
         color: var(--primary);

@@ -6,9 +6,18 @@
     border-radius: 0.5rem;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba(1, 66, 140, 0.12);
+      transform: translateY(-3px);
+    }
     .cs-testimonial-title {
-      font-family: var(--headerFont);
-      font-weight: 700;
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
       color: var(--headerColor);
       margin-bottom: 0.5rem;
     }

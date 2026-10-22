@@ -26,13 +26,17 @@
     --bodyFontSize: 1rem;
 
     /* Spacing */
-    /* 60px - 100px top and bottom. Longhand-only (padding-top/padding-bottom) wherever this
-       is consumed, so it never collides with a co-applied class's own left/right padding. */
-    --sectionPadding: 2rem;
+    /* Fluid 48px - 96px top and bottom, matching the homepage's section rhythm.
+       Longhand-only (padding-top/padding-bottom) wherever this is consumed, so it never
+       collides with a co-applied class's own left/right padding. */
+    --sectionPadding: clamp(3rem, 7vw, 6rem);
 
     /* Fonts — update to match project typeface */
     --headerFont: "Hanken Grotesk", Arial, sans-serif;
     --bodyFont: "Hanken Grotesk", Arial, sans-serif;
+    /* Editorial serif, reserved for display headings only — nav, buttons, toppers
+       and other UI chrome stay on --headerFont. */
+    --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
   }
 
   html,
@@ -45,6 +49,9 @@
     color: var(--bodyTextColor);
     background-color: var(--bg-base);
     scroll-behavior: smooth;
+    /* Keeps the "skip to main content" link (and any future in-page anchor) from
+       landing content under the sticky nav — matches #cs-navigation's 5rem height. */
+    scroll-padding-top: 5rem;
   }
 
   *,
@@ -77,19 +84,28 @@
     color: var(--primary);
     display: block;
     margin-bottom: 0.25rem;
+
+    &::before {
+      content: "+ ";
+    }
   }
 
   .cs-title {
     font-size: var(--headerFontSize);
-    font-family: var(--headerFont);
-    font-weight: 700;
-    line-height: 1.2em;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
     color: var(--headerColor);
     margin: 0 0 1rem;
   }
 
+  /* Margin, not padding: padding doesn't collapse, so stacked paragraphs were
+     getting 2rem + 2rem (4rem) between them -- more than a heading gets from
+     the text that follows it (1rem). Margin-bottom only, so the gap to
+     whatever comes next is just this value, consistently. */
   .cs-text {
-    padding: 2rem 0 2rem 0;
+    margin: 0 0 1.5rem;
     font-size: var(--bodyFontSize);
     line-height: 1.5em;
     color: var(--bodyTextColor);
@@ -99,7 +115,7 @@
   /* Container */
   .cs-container {
     width: 100%;
-    max-width: 80rem;
+    max-width: 90vw;
     margin: 0 auto;
     /* longhand so this never collides with a co-applied class's own top/bottom padding */
     padding-left: 1rem;
@@ -116,9 +132,18 @@
     font-weight: 700;
     text-decoration: none;
     border-radius: 0.25rem;
-    transition: background-color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
     &:hover {
       background-color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 0.625rem 1.25rem rgba(1, 66, 140, 0.22);
+    }
+    &:focus-visible {
+      outline: 0.15rem solid var(--primary);
+      outline-offset: 0.15rem;
     }
   }
 }
@@ -217,26 +242,38 @@
         position: absolute;
         left: 0;
         bottom: -0.25rem;
-        width: 0;
+        width: 100%;
         height: 0.125rem;
         background-color: var(--primary);
-        transition: width 0.25s ease;
-        transform: translateZ(0);
-        backface-visibility: hidden;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
       }
 
       &:not(.cs-nav-button):hover::after {
-        width: 100%;
+        transform: scaleX(1);
+      }
+
+      &:focus-visible {
+        outline: 0.15rem solid var(--primary);
+        outline-offset: 0.15rem;
       }
     }
 
     .cs-nav-button {
       background-color: var(--primary);
-      color: var(--primaryLight) !important;
+      color: var(--primaryLight);
       padding: 0.5rem 1rem;
       border-radius: 0.25rem;
+      border: 2px solid var(--primaryLight);
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
       &:hover {
-        background-color: var(--secondary);
+        background: var(--primaryLight);
+        color: var(--primary);
+        border: 2px solid var(--primary);
       }
     }
 
@@ -450,9 +487,11 @@
     }
 
     .cs-header {
-      font-size: 1rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      color: var(--headerColor);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
       display: block;
       margin-bottom: 0.75rem;
     }
@@ -473,6 +512,10 @@
       transition: color 0.2s ease;
       &:hover {
         color: var(--primary);
+      }
+      &:focus-visible {
+        outline: 0.15rem solid var(--primary);
+        outline-offset: 0.15rem;
       }
     }
 
@@ -527,41 +570,53 @@
       z-index: 3;
       color: #fff;
       text-align: center;
-      font-family: var(--headerFont);
+      font-family: var(--font-serif);
       font-size: var(--headerFontSize);
-      font-weight: 700;
+      font-weight: 600;
+      letter-spacing: -0.02em;
       padding: 0 1rem;
     }
   }
 
-  /* Responsive grid for cards/rectangles/squares */
+  /* Responsive grid for cards/rectangles/squares.
+     No padding of its own — every usage already sits inside (or is combined
+     with) .cs-section, which supplies the vertical rhythm; adding padding
+     here too just double-stacks it. */
   .cs-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: var(--sectionPadding);
   }
 
   .cs-card {
     display: flex;
     flex-direction: column;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     overflow: hidden;
     background-color: var(--bg-card);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba(1, 66, 140, 0.12);
+      transform: translateY(-3px);
+    }
     img {
       width: 100%;
-      height: 12rem;
+      height: 14rem;
       object-fit: cover;
     }
     .cs-card-body {
-      padding: 1.25rem;
+      padding: 1.5rem;
     }
     .cs-card-title {
-      font-family: var(--headerFont);
-      font-weight: 700;
+      font-family: var(--font-serif);
+      font-size: 1.375rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
       color: var(--headerColor);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.625rem;
     }
   }
 
@@ -573,7 +628,7 @@
     .cs-profile-toggle {
       position: relative;
       display: block;
-      width: 15rem;
+      width: 17rem;
       margin: 0 auto 1rem;
       padding: 0;
       border: none;
@@ -581,31 +636,38 @@
       cursor: pointer;
       border-radius: 5%;
       overflow: hidden;
+      transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+      &:hover {
+        box-shadow: 0 1rem 2rem rgba(1, 66, 140, 0.16);
+        transform: translateY(-3px);
+      }
       &:focus-visible {
         outline: 0.15rem solid var(--primary);
         outline-offset: 0.15rem;
       }
     }
     img {
-      width: 15rem;
-      height: 20rem;
+      width: 17rem;
+      height: 22rem;
       object-fit: cover;
       border-radius: 5%;
       display: block;
       transition: filter 0.2s ease-in-out;
     }
     .cs-profile-placeholder {
-      width: 15rem;
-      height: 20rem;
+      width: 17rem;
+      height: 22rem;
       border-radius: 5%;
       display: flex;
       align-items: center;
       justify-content: center;
       background-color: var(--primary);
       color: #fff;
-      font-family: var(--headerFont);
-      font-weight: 700;
-      font-size: 2.5rem;
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 3rem;
     }
     .cs-profile-plus {
       position: absolute;
@@ -629,8 +691,10 @@
       background-color: var(--primary);
     }
     .cs-profile-name {
-      font-family: var(--headerFont);
-      font-weight: 700;
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
       color: var(--headerColor);
       margin-bottom: 0.25rem;
     }
@@ -659,6 +723,25 @@
     border-radius: 0.5rem;
   }
 
+  /* Wraps a .cs-full-image so a .cs-stat-chip can overlap its corner. */
+  .cs-image-frame {
+    position: relative;
+  }
+
+  .cs-stat-chip {
+    position: absolute;
+    right: 1rem;
+    bottom: -1.25rem;
+    max-width: 14rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
   /* Accreditation badge */
   .cs-badge {
     display: block;
@@ -677,10 +760,21 @@
   }
 
   .cs-list {
-    padding: 0 0 0 1.25rem;
+    list-style: none;
+    padding: 0;
     li {
+      position: relative;
       margin-bottom: 0.5rem;
+      padding-left: 1.125rem;
       line-height: 1.5em;
+
+      &::before {
+        content: "+";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 700;
+      }
     }
   }
 }
@@ -689,16 +783,13 @@
   /* Cookie consent banner */
   .cs-cookie-banner {
     position: fixed;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 20000;
-    max-width: 40rem;
-    margin: 0 auto;
     background-color: var(--bg-card);
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    padding: 1.25rem;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.12);
+    padding: 0.625rem 1rem;
 
     &[hidden] {
       display: none;
@@ -706,14 +797,19 @@
 
     .cs-cookie-inner {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      max-width: var(--container-max);
+      margin: 0 auto;
     }
 
     .cs-cookie-text {
-      font-size: 0.875rem;
-      line-height: 1.5em;
+      font-size: 0.8125rem;
+      line-height: 1.4em;
       color: var(--bodyTextColor);
+      flex: 1 1 20rem;
       a {
         color: var(--primary);
       }
@@ -721,13 +817,13 @@
 
     .cs-cookie-actions {
       display: flex;
-      gap: 0.75rem;
-      justify-content: flex-end;
+      gap: 0.5rem;
+      flex-shrink: 0;
 
       button {
-        padding: 0.5rem 1.25rem;
+        padding: 0.375rem 0.875rem;
         border-radius: 0.25rem;
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
         font-weight: 700;
         cursor: pointer;
         border: 1px solid var(--primary);
@@ -771,7 +867,7 @@
       border-radius: 0.5rem;
 
       .cs-text {
-        padding: 0;
+        margin: 0;
         max-width: none;
       }
     }

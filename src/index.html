@@ -7,141 +7,766 @@ tags: "sitemap"
 
 {% extends "layouts/base.html" %} {% block head %}
 <link rel="stylesheet" href="/assets/css/local.css" />
+<script defer src="/assets/js/redesign-home.js"></script>
 {% endblock %} {% block body %}
 
-<section id="cs-hero">
+<section id="cs-rb-hero">
+  <div class="cs-container cs-rb-hero-inner">
+    <div data-reveal>
+      <h1 class="cs-rb-hero-title">
+        Expert help for all your aches &amp; pains
+      </h1>
+      <p class="cs-rb-lede">
+        Physiotherapy Plus Scotland covers the whole of East Lothian. We are a
+        team of highly experienced and skilled Chartered Physiotherapists,
+        registered with the Health and Care Professions Council, the Chartered
+        Society of Physiotherapy, and recognised as a Physio First Centre.
+      </p>
+      <div class="cs-rb-hero-cta">
+        <a
+          class="cs-rb-button-solid"
+          href="{{ client.bookingUrl }}"
+          target="_blank"
+          rel="noopener"
+        >
+          Book Online
+          <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+            <path
+              d="M4 12L12 4M6 4H12V10"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        <a class="cs-rb-phone-link" href="tel:{{ client.phoneForTel }}">
+          <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+          {{ client.phoneFormatted }}
+        </a>
+        <a class="cs-rb-phone-link" href="mailto:{{ client.email }}">
+          <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+          {{ client.email }}
+        </a>
+      </div>
+      <ul class="cs-rb-credentials">
+        <li>
+          <svg width="10" height="10" viewBox="0 -0.5 25 25" fill="none" aria-hidden="true">
+            <path
+              d="M5.5 12.5L10.167 17L19.5 8"
+              stroke="currentColor"
+              stroke-width="3.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Chartered Physiotherapists
+        </li>
+        <li>
+          <svg width="10" height="10" viewBox="0 -0.5 25 25" fill="none" aria-hidden="true">
+            <path
+              d="M5.5 12.5L10.167 17L19.5 8"
+              stroke="currentColor"
+              stroke-width="3.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >HCPC registered
+        </li>
+        <li>
+          <svg width="10" height="10" viewBox="0 -0.5 25 25" fill="none" aria-hidden="true">
+            <path
+              d="M5.5 12.5L10.167 17L19.5 8"
+              stroke="currentColor"
+              stroke-width="3.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Physio First Centre
+        </li>
+        <li>
+          <svg width="10" height="10" viewBox="0 -0.5 25 25" fill="none" aria-hidden="true">
+            <path
+              d="M5.5 12.5L10.167 17L19.5 8"
+              stroke="currentColor"
+              stroke-width="3.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >All major insurers
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cs-rb-photo-band">
   <div class="cs-container">
-    <h1 class="cs-hero-title">Physiotherapy East Lothian</h1>
-    <p class="cs-text">
-      Physiotherapy Plus Scotland covers the whole of East Lothian. We are a
-      team of highly experienced and skilled Chartered Physiotherapists,
-      registered with the Health and Care Professions Council, the Chartered
-      Society of Physiotherapy, and recognised as a Physio First Centre.
-    </p>
-    <a
-      class="cs-button-solid"
-      href="{{ client.bookingUrl }}"
-      target="_blank"
-      rel="noopener"
-      >Book Now</a
-    >
+    <div class="cs-rb-photo-frame" data-reveal>
+      <img
+        src="{% getUrl '/assets/images/toa-heftiba-a9pFSC8dTlo-unsplash.jpg' | resize({ width: 1600, height: 700, position: 'attention' }) | jpeg %}"
+        alt="Hands-on physiotherapy treatment"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="cs-rb-photo-scrim" aria-hidden="true"></div>
+      <blockquote class="cs-rb-quote">
+        <p>
+          &ldquo;First class treatment in helping me rehab an injury back to
+          full strength. A very personal and caring practice.&rdquo;
+        </p>
+        <cite>&mdash; G. Reid</cite>
+      </blockquote>
+    </div>
   </div>
 </section>
 
-<section id="cs-banners" class="cs-container cs-grid cs-grid-3">
-  <a class="cs-banner-link" href="/what-we-do/">
-    <div class="cs-banner">
+<section id="cs-rb-aim">
+  <div class="cs-container cs-rb-aim-grid">
+    <div class="cs-rb-aim-image" data-reveal>
       <img
-        src="{% getUrl '/assets/images/yury-kirillov-pbUWW-CBoqY-unsplash.jpg' | resize({ width: 700, height: 500 }) | jpeg %}"
-        alt="Physiotherapist assessing a patient's knee"
+        src="{% getUrl '/assets/images/zemletruth-back-4916984.jpg' | resize({ width: 900, height: 600 }) | jpeg %}"
+        alt="Illustration of back and spine"
         loading="lazy"
         decoding="async"
       />
-      <span class="cs-banner-title">What We Do</span>
+      <div class="cs-rb-stat-chip">
+        <span class="cs-rb-stat-number">25+</span>
+        <span class="cs-rb-stat-label">years treating East Lothian</span>
+      </div>
     </div>
-  </a>
-  <a class="cs-banner-link" href="/services/">
-    <div class="cs-banner">
-      <img
-        src="{% getUrl '/assets/images/logan-weaver-lgnwvr-u76Gd0hP5w4-unsplash.jpg' | resize({ width: 700, height: 500 }) | jpeg %}"
-        alt="Two people stretching during a Pilates class"
-        loading="lazy"
-        decoding="async"
-      />
-      <span class="cs-banner-title">Prices</span>
+    <div data-reveal style="transition-delay: 100ms">
+      <span class="cs-rb-eyebrow">
+        <svg width="11" height="11" viewBox="0 0 14 14" aria-hidden="true">
+          <path
+            d="M7 1v12M1 7h12"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+          />
+        </svg>
+        Our aim
+      </span>
+      <h2 class="cs-rb-heading">Whatever&rsquo;s holding you back</h2>
+      <p class="cs-rb-body-copy">
+        From low back pain and sciatica to sports injuries and post-surgery
+        rehabilitation, our Chartered Physiotherapists identify the cause of
+        your problem and work with you to get you moving again.
+      </p>
+      <ul class="cs-rb-aims-list">
+        <li>
+          <svg width="13" height="13" viewBox="0 -0.5 25 25" fill="none" aria-hidden="true">
+            <path
+              d="M5.5 12.5L10.167 17L19.5 8"
+              stroke="currentColor"
+              stroke-width="2.9"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Identify your condition
+        </li>
+        <li>
+          <svg width="13" height="13" viewBox="0 -0.5 25 25" fill="none" aria-hidden="true">
+            <path
+              d="M5.5 12.5L10.167 17L19.5 8"
+              stroke="currentColor"
+              stroke-width="2.9"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Work with you to find the best solution
+        </li>
+        <li>
+          <svg width="13" height="13" viewBox="0 -0.5 25 25" fill="none" aria-hidden="true">
+            <path
+              d="M5.5 12.5L10.167 17L19.5 8"
+              stroke="currentColor"
+              stroke-width="2.9"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Provide you with expert treatment and advice to maximise your
+          potential
+        </li>
+        <li>
+          <svg width="13" height="13" viewBox="0 -0.5 25 25" fill="none" aria-hidden="true">
+            <path
+              d="M5.5 12.5L10.167 17L19.5 8"
+              stroke="currentColor"
+              stroke-width="2.9"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Offer prompt and efficient care for busy people
+        </li>
+      </ul>
     </div>
-  </a>
-  <a class="cs-banner-link" href="/contact/">
-    <div class="cs-banner">
-      <img
-        src="{% getUrl '/assets/images/pexels-funkcines-terapijos-centras-927573878-20860587.jpg' | resize({ width: 700, height: 500 }) | jpeg %}"
-        alt="Physiotherapist treating a patient in clinic"
-        loading="lazy"
-        decoding="async"
-      />
-      <span class="cs-banner-title">Get In Touch</span>
-    </div>
-  </a>
-</section>
-
-<section id="cs-aim" class="cs-section">
-  <div class="cs-container">
-    <h2 class="cs-title">Our aim at Physiotherapy Plus is to:</h2>
-    <ul class="cs-list cs-text">
-      <li>Identify your condition</li>
-      <li>Work with you to find the best solution</li>
-      <li>
-        Provide you with expert treatment and advice to maximise your potential
-      </li>
-      <li>Offer prompt and efficient care for busy people</li>
-    </ul>
-    <p class="cs-text">
-      In addition to Physiotherapy we have a team of other healthcare
-      professionals who provide Chiropody/Podiatry, Acupuncture, Pilates,
-      Hearing Tests, Health Screening, Massage Therapy, Sports Rehabilitation
-      and 1:1 Pilates.
-    </p>
   </div>
 </section>
 
-<section id="cs-spine" class="cs-container cs-grid cs-grid-2">
-  <img
-    class="cs-full-image"
-    src="{% getUrl '/assets/images/zemletruth-back-4916984.jpg' | resize({ width: 900, height: 600 }) | jpeg %}"
-    alt="Illustration of back and spine"
-    loading="lazy"
-    decoding="async"
-  />
-  <div class="cs-content-block">
-    <h2 class="cs-title">Whatever's holding you back</h2>
-    <p class="cs-text">
-      From low back pain and sciatica to sports injuries and post-surgery
-      rehabilitation, our Chartered Physiotherapists identify the cause of your
-      problem and work with you to get you moving again.
-    </p>
+<section id="cs-rb-care">
+  <div class="cs-container cs-rb-bleed-right">
+    <div class="cs-rb-section-head" data-reveal>
+      <div>
+        <span class="cs-rb-eyebrow">
+          <svg width="11" height="11" viewBox="0 0 14 14" aria-hidden="true">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+            />
+          </svg>
+          What we do
+        </span>
+        <h2 class="cs-rb-heading">Care for the whole body</h2>
+      </div>
+      <a class="cs-rb-text-link" href="/what-we-do/">
+        All conditions we treat
+        <svg width="16" height="10" viewBox="0 0 18 10" aria-hidden="true">
+          <path
+            d="M1 5h15M12 1l4 4-4 4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <div class="cs-rb-rail" data-rail>
+      <div class="cs-rail-viewport">
+        <div class="cs-rail-track">
+          <div class="cs-rail-item">
+            <div class="cs-rb-care-card">
+              <img
+                src="{% getUrl '/assets/images/annie-spratt-Nt5eeIKH-1s-unsplash.jpg' | resize({ width: 500, height: 400, position: 'attention' }) | jpeg %}"
+                alt="Physiotherapist assisting a patient with a lower back and hip stretch"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="cs-rb-care-card-body">
+                <h3>Low Back Pain</h3>
+                <ul class="cs-rb-care-list">
+                  <li>Sciatica</li>
+                  <li>Slipped Discs</li>
+                  <li>Trapped Nerves</li>
+                  <li>Chronic Back Pain</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-rail-item">
+            <div class="cs-rb-care-card">
+              <img
+                src="{% getUrl '/assets/images/pexels-karola-g-4506161.jpg' | resize({ width: 500, height: 400, position: 'attention' }) | jpeg %}"
+                alt="Physiotherapist assessing a patient's neck"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="cs-rb-care-card-body">
+                <h3>Neck Pain</h3>
+                <ul class="cs-rb-care-list">
+                  <li>Whiplash</li>
+                  <li>Disc Problems</li>
+                  <li>Wear &amp; Tear</li>
+                  <li>Postural Problems</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-rail-item">
+            <div class="cs-rb-care-card">
+              <img
+                src="{% getUrl '/assets/images/pexels-karola-g-4506169.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+                alt="Physiotherapist mobilising a patient's arm"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="cs-rb-care-card-body">
+                <h3>Joint &amp; Muscle Problems</h3>
+                <ul class="cs-rb-care-list">
+                  <li>Fractures</li>
+                  <li>Osteo &amp; Rheumatoid Arthritis</li>
+                  <li>Strains &amp; Sprains, Muscle Pulls</li>
+                  <li>Tendinitis &amp; Tendinopathy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-rail-item">
+            <div class="cs-rb-care-card">
+              <img
+                src="{% getUrl '/assets/images/pexels-kampus-6111625.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+                alt="Physiotherapist guiding a patient with a prosthetic leg through rehabilitation exercises"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="cs-rb-care-card-body">
+                <h3>Sports Injuries &amp; Post Surgery</h3>
+                <ul class="cs-rb-care-list">
+                  <li>Golfer&rsquo;s &amp; Tennis Elbow</li>
+                  <li>Runner&rsquo;s Knee, Hamstring Tears</li>
+                  <li>Achilles Tendon Problems</li>
+                  <li>Hip / Knee Replacement</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-rail-item">
+            <div class="cs-rb-care-card">
+              <img
+                src="{% getUrl '/assets/images/pexels-karola-g-4506166.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+                alt="Physiotherapist assisting a patient with a resistance band exercise"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="cs-rb-care-card-body">
+                <h3>Women&rsquo;s Health</h3>
+                <ul class="cs-rb-care-list">
+                  <li>Ante &amp; Post-natal Care</li>
+                  <li>Pelvic Floor Weakness Treatment</li>
+                  <li>Mummy MOT Consultations</li>
+                  <li>Women&rsquo;s Pelvic Health Consultations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-rail-item">
+            <div class="cs-rb-care-card">
+              <img
+                src="{% getUrl '/assets/images/pexels-yankrukov-5793896.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+                alt="Podiatrist treating a patient's foot"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="cs-rb-care-card-body">
+                <h3>Podiatry</h3>
+                <ul class="cs-rb-care-list">
+                  <li>Routine Foot &amp; Nail Care</li>
+                  <li>Diabetic &amp; Rheumatoid Foot Care</li>
+                  <li>Biomechanics &amp; Sports-Related Problems</li>
+                  <li>Insoles &amp; Orthotic Management</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-rail-item">
+            <div class="cs-rb-care-card">
+              <img
+                src="{% getUrl '/assets/images/pexels-klaus-nielsen-6303422.jpg' | resize({ width: 500, height: 400 }) | jpeg %}"
+                alt="Rolling out a yoga mat for a Pilates class"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="cs-rb-care-card-body">
+                <h3>Pilates</h3>
+                <ul class="cs-rb-care-list">
+                  <li>Physiotherapist &amp; Instructor-led Classes</li>
+                  <li>Strengthens Core &amp; Improves Flexibility</li>
+                  <li>1:1 or Small Group Rehabilitation</li>
+                  <li>APPI-accredited</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="cs-rail-edge-fade cs-rail-edge-fade-left"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="cs-rail-edge-fade cs-rail-edge-fade-right"
+          aria-hidden="true"
+        ></div>
+      </div>
+      <div class="cs-rail-progress" aria-hidden="true">
+        <div class="cs-rail-progress-thumb"></div>
+      </div>
+      <div class="cs-rail-controls">
+        <button
+          type="button"
+          class="cs-rail-btn cs-rail-prev"
+          aria-label="Previous"
+        >
+          <svg width="16" height="10" viewBox="0 0 18 10" aria-hidden="true">
+            <path
+              d="M17 5H2M6 1L2 5l4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="cs-rail-btn cs-rail-next"
+          aria-label="Next"
+        >
+          <svg width="16" height="10" viewBox="0 0 18 10" aria-hidden="true">
+            <path
+              d="M1 5h15M12 1l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
-<a class="cs-banner-link" href="/what-we-do">
-  <div class="cs-banner">
-    <img
-      src="{% getUrl '/assets/images/pexels-funkcines-terapijos-centras-927573878-20860603.jpg' | resize({ width: 1600, height: 700 }) | jpeg %}"
-      alt="Physiotherapist-led Pilates class"
-      loading="eager"
-      decoding="async"
-    />
-    <span class="cs-banner-title">What we offer</span>
-  </div>
-</a>
+<section id="cs-rb-team">
+  <div class="cs-container cs-rb-bleed-right">
+    <div class="cs-rb-section-head" data-reveal>
+      <div>
+        <span class="cs-rb-eyebrow">
+          <svg width="11" height="11" viewBox="0 0 14 14" aria-hidden="true">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+            />
+          </svg>
+          Meet the team
+        </span>
+        <h2 class="cs-rb-heading">The people you&rsquo;ll see</h2>
+      </div>
+      <a class="cs-rb-text-link" href="/meet-the-team/">
+        Meet the whole team
+        <svg width="16" height="10" viewBox="0 0 18 10" aria-hidden="true">
+          <path
+            d="M1 5h15M12 1l4 4-4 4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
 
-<section id="cs-rectangles" class="cs-container cs-grid cs-grid-2">
-  <a class="cs-card" href="/what-we-do">
-    <img
-      src="{% getUrl '/assets/images/toralf-thomassen-5S40ixhBK-I-unsplash.jpg' | resize({ width: 700, height: 450 }) | jpeg %}"
-      alt="Podiatrist examining a patient's foot"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="cs-card-body">
-      <h3 class="cs-card-title">What We Do</h3>
-      <p class="cs-text">
-        Take a look at a range of our services and what we do here at
-        Physiotherapy Plus.
+    <div class="cs-rb-rail cs-rb-rail-narrow" data-rail>
+      <div class="cs-rail-viewport">
+        <div class="cs-rail-track">
+          <div class="cs-rail-item cs-rail-item-narrow">
+            <div class="cs-rb-team-photo">
+              <img
+                src="{% getUrl '/assets/images/team/craig-spinks.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+                alt="Craig Spinks"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="cs-rb-team-name">Craig Spinks</h3>
+            <span class="cs-rb-team-title"
+              >Practice owner / Physiotherapist MCSP</span
+            >
+          </div>
+
+          <div class="cs-rail-item cs-rail-item-narrow">
+            <div class="cs-rb-team-photo">
+              <img
+                src="{% getUrl '/assets/images/team/rachael-valentine.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+                alt="Rachael Valentine"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="cs-rb-team-name">Rachael Valentine</h3>
+            <span class="cs-rb-team-title">Physiotherapist MCSP</span>
+          </div>
+
+          <div class="cs-rail-item cs-rail-item-narrow">
+            <div class="cs-rb-team-photo">
+              <img
+                src="{% getUrl '/assets/images/team/roz-waddell.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+                alt="Roz Waddell"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="cs-rb-team-name">Roz Waddell</h3>
+            <span class="cs-rb-team-title">Physiotherapist MCSP</span>
+          </div>
+
+          <div class="cs-rail-item cs-rail-item-narrow">
+            <div class="cs-rb-team-photo">
+              <img
+                src="{% getUrl '/assets/images/team/josie-marshall.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+                alt="Josie Marshall"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="cs-rb-team-name">Josie Marshall</h3>
+            <span class="cs-rb-team-title">Physiotherapist MCSP</span>
+          </div>
+
+          <div class="cs-rail-item cs-rail-item-narrow">
+            <div class="cs-rb-team-photo">
+              <img
+                src="{% getUrl '/assets/images/team/gillian-anderson.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+                alt="Gillian Anderson"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="cs-rb-team-name">Gillian Anderson</h3>
+            <span class="cs-rb-team-title">Clinic Manager</span>
+          </div>
+
+          <div class="cs-rail-item cs-rail-item-narrow">
+            <div class="cs-rb-team-photo">
+              <img
+                src="{% getUrl '/assets/images/team/sally-brown.jpg' | resize({ width: 400, height: 400, position: 'attention' }) | jpeg %}"
+                alt="Sally Brown"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="cs-rb-team-name">Sally Brown</h3>
+            <span class="cs-rb-team-title">Podiatrist</span>
+          </div>
+
+          <div class="cs-rail-item cs-rail-item-narrow">
+            <div class="cs-rb-team-photo">
+              <div class="cs-rb-team-placeholder" aria-hidden="true">KB</div>
+            </div>
+            <h3 class="cs-rb-team-name">Keith Barker</h3>
+            <span class="cs-rb-team-title">Hypnotherapy Dip (AHMTMNCH)</span>
+          </div>
+        </div>
+        <div
+          class="cs-rail-edge-fade cs-rail-edge-fade-left"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="cs-rail-edge-fade cs-rail-edge-fade-right"
+          aria-hidden="true"
+        ></div>
+      </div>
+      <div class="cs-rail-progress" aria-hidden="true">
+        <div class="cs-rail-progress-thumb"></div>
+      </div>
+      <div class="cs-rail-controls">
+        <button
+          type="button"
+          class="cs-rail-btn cs-rail-prev"
+          aria-label="Previous"
+        >
+          <svg width="16" height="10" viewBox="0 0 18 10" aria-hidden="true">
+            <path
+              d="M17 5H2M6 1L2 5l4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="cs-rail-btn cs-rail-next"
+          aria-label="Next"
+        >
+          <svg width="16" height="10" viewBox="0 0 18 10" aria-hidden="true">
+            <path
+              d="M1 5h15M12 1l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cs-rb-prices">
+  <div class="cs-container cs-rb-prices-grid">
+    <div data-reveal>
+      <span class="cs-rb-eyebrow cs-rb-eyebrow-on-navy">
+        <svg width="11" height="11" viewBox="0 0 14 14" aria-hidden="true">
+          <path
+            d="M7 1v12M1 7h12"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+          />
+        </svg>
+        Prices
+      </span>
+      <h2 class="cs-rb-heading cs-rb-heading-on-navy">
+        No referral, no waiting list
+      </h2>
+      <p class="cs-rb-body-copy cs-rb-body-copy-on-navy">
+        Self-refer or come through your insurer &mdash; we&rsquo;re approved by
+        all major insurance companies. Prices are per appointment.
+      </p>
+      <a
+        class="cs-rb-button-accent"
+        href="{{ client.bookingUrl }}"
+        target="_blank"
+        rel="noopener"
+      >
+        Book Online
+        <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+          <path
+            d="M4 12L12 4M6 4H12V10"
+            stroke="currentColor"
+            stroke-width="1.5"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+    <div data-reveal style="transition-delay: 100ms">
+      <ul class="cs-rb-price-list">
+        <li>
+          <span class="cs-rb-price-name"
+            >Physiotherapy &mdash; initial consultation</span
+          ><span class="cs-rb-price-meta">1 hour</span
+          ><span class="cs-rb-price-value">&pound;80</span>
+        </li>
+        <li>
+          <span class="cs-rb-price-name">Physiotherapy &mdash; follow-up</span
+          ><span class="cs-rb-price-meta">45 mins</span
+          ><span class="cs-rb-price-value">&pound;65</span>
+        </li>
+        <li>
+          <span class="cs-rb-price-name"
+            >Mummy MOT &mdash; initial consultation</span
+          ><span class="cs-rb-price-meta">75 mins</span
+          ><span class="cs-rb-price-value">&pound;100</span>
+        </li>
+        <li>
+          <span class="cs-rb-price-name"
+            >Podiatry &mdash; full foot consultation</span
+          ><span class="cs-rb-price-meta"></span
+          ><span class="cs-rb-price-value">&pound;40</span>
+        </li>
+        <li>
+          <span class="cs-rb-price-name">Sports massage</span
+          ><span class="cs-rb-price-meta">1 hour</span
+          ><span class="cs-rb-price-value">&pound;60</span>
+        </li>
+      </ul>
+      <p class="cs-rb-price-footnote">
+        Full price list, including acupuncture, Pilates, scar therapy and
+        hypnotherapy, on the <a href="/services/">Prices page</a>.
       </p>
     </div>
-  </a>
-  <a class="cs-card" href="/services/">
-    <img
-      src="{% getUrl '/assets/images/toa-heftiba-a9pFSC8dTlo-unsplash.jpg' | resize({ width: 700, height: 450, position: 'attention' }) | jpeg %}"
-      alt="Hands-on physiotherapy treatment"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="cs-card-body">
-      <h3 class="cs-card-title">Prices</h3>
-      <p class="cs-text">See all of our prices for the services we offer.</p>
+  </div>
+</section>
+
+<section id="cs-rb-visit">
+  <div class="cs-container cs-rb-visit-grid" data-reveal>
+    <div class="cs-rb-visit-item">
+      <div class="cs-rb-rule">
+        <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true">
+          <path
+            d="M7 1v12M1 7h12"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          /></svg
+        ><span></span>
+      </div>
+      <div class="cs-rb-visit-label">Where</div>
+      <div class="cs-rb-visit-value">
+        7 Church Road &middot; North Berwick &middot; EH39 4AD
+      </div>
     </div>
-  </a>
+    <div class="cs-rb-visit-item">
+      <div class="cs-rb-rule">
+        <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true">
+          <path
+            d="M7 1v12M1 7h12"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          /></svg
+        ><span></span>
+      </div>
+      <div class="cs-rb-visit-label">Phone</div>
+      <div class="cs-rb-visit-value">
+        <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
+      </div>
+    </div>
+    <div class="cs-rb-visit-item">
+      <div class="cs-rb-rule">
+        <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true">
+          <path
+            d="M7 1v12M1 7h12"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          /></svg
+        ><span></span>
+      </div>
+      <div class="cs-rb-visit-label">Email</div>
+      <div class="cs-rb-visit-value">
+        <a href="mailto:{{ client.email }}">{{ client.email }}</a>
+      </div>
+    </div>
+    <div class="cs-rb-visit-item">
+      <div class="cs-rb-rule">
+        <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true">
+          <path
+            d="M7 1v12M1 7h12"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          /></svg
+        ><span></span>
+      </div>
+      <div class="cs-rb-visit-label">Areas we cover</div>
+      <div class="cs-rb-visit-value">
+        North Berwick &middot; Haddington &middot; Musselburgh &middot; Dunbar
+        &middot; Tranent
+      </div>
+    </div>
+  </div>
 </section>
 
 {% endblock %}

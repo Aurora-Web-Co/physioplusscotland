@@ -20,6 +20,36 @@ tags: "sitemap"
   <span class="cs-banner-title">Services</span>
 </div>
 
+<section id="cs-prices-intro" class="cs-section">
+  <div class="cs-container cs-grid cs-grid-2">
+    <div class="cs-image-frame">
+      <img
+        class="cs-full-image"
+        src="{% getUrl '/assets/images/toralf-thomassen-5S40ixhBK-I-unsplash.jpg' | resize({ width: 900, height: 600, position: 'attention' }) | jpeg %}"
+        alt="Physiotherapist assessing a patient's ankle and foot"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="cs-stat-chip">Approved by all major insurers</div>
+    </div>
+    <div class="cs-content-block">
+      <span class="cs-topper">Prices</span>
+      <h2 class="cs-title">No referral, no waiting list</h2>
+      <p class="cs-text">
+        Self-refer or come through your insurer &mdash; we're approved by all
+        major insurance companies. Prices are per appointment.
+      </p>
+      <a
+        class="cs-button-solid"
+        href="{{ client.bookingUrl }}"
+        target="_blank"
+        rel="noopener"
+        >Book Online</a
+      >
+    </div>
+  </div>
+</section>
+
 <section id="cs-prices" class="cs-section">
   <div class="cs-container">
     <div class="cs-price-accordion">

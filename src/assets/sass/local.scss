@@ -1,28 +1,706 @@
 /* Home page styles */
 
 @media only screen and (min-width: 0px) {
-  #cs-hero {
-    padding: 4rem 0 2rem 0; /* extra offset below the fixed nav, tighter bottom gap to the banners */
-    text-align: center;
-    .cs-hero-title {
-      font-size: var(--headerFontSize);
-      font-family: var(--headerFont);
-      font-weight: 700;
-      color: var(--headerColor);
-      margin-bottom: 1rem;
-    }
-    .cs-text {
-      max-width: 40.625rem;
-      margin: 0 auto;
+  :root {
+    /* --font-serif is now declared globally in root.scss */
+    --display-1: clamp(2.5rem, 5vw, 4.25rem);
+    --display-2: clamp(1.75rem, 3.2vw, 2.75rem);
+    --tracking-display: -0.02em;
+
+    --duration-reveal: 0.55s;
+    --ease-reveal: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  /* Scroll reveal — fade and 18px rise, once, no bounce. */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity var(--duration-reveal) var(--ease-reveal),
+      transform var(--duration-reveal) var(--ease-reveal);
+    &.is-shown {
+      opacity: 1;
+      transform: none;
     }
   }
 
-  .cs-banner-link {
-    display: block;
-    text-decoration: none;
-  }
-
-  #cs-spine {
+  .cs-rb-eyebrow {
+    display: flex;
     align-items: center;
+    gap: 0.5rem;
+    font-size: var(--topperFontSize);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+
+    &.cs-rb-eyebrow-on-navy {
+      color: var(--primaryLight);
+    }
+  }
+
+  .cs-rb-heading {
+    font-family: var(--font-serif);
+    font-size: var(--display-2);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: var(--tracking-display);
+    color: var(--headerColor);
+    margin: 0 0 1.25rem;
+
+    &.cs-rb-heading-on-navy {
+      color: #fff;
+    }
+  }
+
+  .cs-rb-body-copy {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--bodyTextColor);
+    max-width: 36rem;
+    margin: 0 0 1.75rem;
+
+    &.cs-rb-body-copy-on-navy {
+      color: var(--primaryLight);
+      max-width: 26rem;
+    }
+  }
+
+  .cs-rb-text-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    white-space: nowrap;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:focus-visible {
+      outline: 0.15rem solid var(--primary);
+      outline-offset: 0.15rem;
+    }
+  }
+
+  .cs-rb-button-solid {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    background: var(--primary);
+    color: var(--primaryLight);
+    text-decoration: none;
+    padding: 0.9375rem 1.5rem;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    font-size: 1.0625rem;
+    white-space: nowrap;
+    border: 2px solid var(--primaryLight);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
+    &:hover {
+      background: var(--primaryLight);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+  }
+
+  .cs-rb-button-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    background: var(--primaryLight);
+    color: var(--primary);
+    text-decoration: none;
+    padding: 0.8125rem 1.375rem;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    &:hover {
+      opacity: 0.85;
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.18);
+    }
+    &:focus-visible {
+      outline: 0.15rem solid var(--primaryLight);
+      outline-offset: 0.15rem;
+    }
+  }
+
+  .cs-rb-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: var(--primary);
+    margin-bottom: 0.875rem;
+    span {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--primary), transparent);
+    }
+  }
+
+  /*-- Hero --*/
+
+  #cs-rb-hero {
+    background: var(--bg-base);
+    padding-top: clamp(1rem, 2vw, 4rem);
+    padding-bottom: clamp(6rem, 10vw, 9rem);
+  }
+
+  .cs-rb-hero-inner > div {
+    max-width: 52rem;
+  }
+
+  .cs-rb-hero-title {
+    font-family: var(--font-serif);
+    font-size: var(--display-1);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: var(--tracking-display);
+    color: var(--headerColor);
+    margin: 0 0 1.5rem;
+  }
+
+  .cs-rb-lede {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: var(--bodyTextColor);
+    max-width: 40rem;
+    margin: 0 0 2.25rem;
+  }
+
+  .cs-rb-hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .cs-rb-phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    white-space: nowrap;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:focus-visible {
+      outline: 0.15rem solid var(--primary);
+      outline-offset: 0.15rem;
+    }
+  }
+
+  .cs-rb-credentials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.4375rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+  }
+
+  /*-- Photo band --*/
+
+  .cs-rb-photo-band {
+    position: relative;
+    margin-top: -4.5rem;
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+    z-index: 2;
+  }
+
+  .cs-rb-photo-frame {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 3rem rgba(1, 66, 140, 0.14);
+
+    img {
+      display: block;
+      width: 100%;
+      height: clamp(15rem, 34vw, 26rem);
+      object-fit: cover;
+    }
+  }
+
+  .cs-rb-photo-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(1, 66, 140, 0.72) 0%,
+      rgba(1, 66, 140, 0.55) 25%,
+      rgba(1, 66, 140, 0.28) 50%,
+      rgba(1, 66, 140, 0.08) 75%,
+      rgba(1, 66, 140, 0) 92%
+    );
+  }
+
+  .cs-rb-quote {
+    position: absolute;
+    left: clamp(1.25rem, 4vw, 3.5rem);
+    right: 1.25rem;
+    bottom: clamp(1.25rem, 4vw, 3rem);
+    max-width: 30rem;
+    margin: 0;
+
+    p {
+      font-family: var(--font-serif);
+      font-size: clamp(1.125rem, 2.2vw, 1.875rem);
+      font-weight: 400;
+      line-height: 1.35;
+      color: #fff;
+      margin: 0 0 0.75rem;
+    }
+
+    cite {
+      font-style: normal;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primaryLight);
+    }
+  }
+
+  /*-- Aim section --*/
+
+  #cs-rb-aim {
+    background: var(--bg-card);
+    padding-top: clamp(4rem, 8vw, 7rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .cs-rb-aim-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+
+  .cs-rb-aim-image {
+    position: relative;
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 0.75rem;
+    }
+  }
+
+  .cs-rb-stat-chip {
+    position: absolute;
+    right: 1rem;
+    bottom: -1.25rem;
+    background: var(--primary);
+    color: #fff;
+    padding: 1.125rem 1.375rem;
+    border-radius: 0.5rem;
+    max-width: 12rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cs-rb-stat-number {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .cs-rb-stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 0.25rem;
+  }
+
+  .cs-rb-aims-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.875rem;
+
+    li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      border-top: 1px solid rgba(1, 66, 140, 0.14);
+      padding-top: 0.875rem;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--bodyTextColor);
+
+      svg {
+        flex-shrink: 0;
+        margin-top: 0.3125rem;
+        color: var(--primary);
+      }
+    }
+  }
+
+  /*-- Care rail / Team rail (shared rail mechanics) --*/
+
+  #cs-rb-care {
+    background: var(--bg-base);
+    --rail-edge-bg: var(--bg-base);
+    padding-top: clamp(4rem, 7vw, 6rem);
+    padding-bottom: clamp(4rem, 7vw, 6rem);
+  }
+
+  #cs-rb-team {
+    background: var(--bg-card);
+    --rail-edge-bg: var(--bg-card);
+    padding-top: clamp(4rem, 7vw, 6rem);
+    padding-bottom: clamp(4rem, 7vw, 6rem);
+  }
+
+  .cs-rb-bleed-right {
+    padding-right: 0;
+  }
+
+  .cs-rb-section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    padding-right: clamp(1rem, 4vw, 3rem);
+  }
+
+  .cs-rail-track {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+    padding-right: clamp(1rem, 4vw, 3rem);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .cs-rail-viewport {
+    position: relative;
+  }
+
+  /* Soften both edges with fading overlays instead of a hard clip, and fade
+     each one in/out as there is or isn't more to scroll that way. A plain
+     mask-image on the track can't be transitioned — swapping its value snaps
+     instantly — so each edge gets its own absolutely-positioned gradient
+     overlay whose opacity animates instead. */
+  .cs-rail-edge-fade {
+    position: absolute;
+    inset: 0;
+    width: 12%;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    &.cs-rail-edge-fade-left {
+      left: 0;
+      opacity: 0;
+      background: linear-gradient(to right, var(--rail-edge-bg, var(--bg-card)), transparent);
+    }
+
+    &.cs-rail-edge-fade-right {
+      left: auto;
+      right: 0;
+      opacity: 1;
+      background: linear-gradient(to left, var(--rail-edge-bg, var(--bg-card)), transparent);
+    }
+  }
+
+  .cs-rb-rail.cs-rail-scrolled .cs-rail-edge-fade-left {
+    opacity: 1;
+  }
+
+  .cs-rb-rail.cs-rail-at-end .cs-rail-edge-fade-right {
+    opacity: 0;
+  }
+
+  .cs-rail-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: min(86vw, 30rem);
+
+    &.cs-rail-item-narrow {
+      width: min(72vw, 20rem);
+      display: block;
+    }
+  }
+
+  .cs-rail-controls {
+    display: flex;
+    gap: 0.625rem;
+    margin-top: 1.25rem;
+  }
+
+  .cs-rail-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(1, 66, 140, 0.22);
+    background: transparent;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  /* Shows how much of the rail is scrolled and how much is left — a scroll position
+     isn't the same as a card count, so this is a progress fill, not per-card dots. */
+  .cs-rail-progress {
+    height: 0.1875rem;
+    margin-top: 0.875rem;
+    background: rgba(1, 66, 140, 0.12);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .cs-rail-progress-thumb {
+    height: 100%;
+    width: 100%;
+    background: var(--primary);
+    border-radius: inherit;
+    transform-origin: left;
+    transition:
+      transform 0.15s ease,
+      width 0.15s ease;
+  }
+
+  .cs-rb-care-card {
+    height: 100%;
+    background: var(--bg-card);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid rgba(1, 66, 140, 0.1);
+    box-shadow: 0 2px 8px rgba(1, 66, 140, 0.06);
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba(1, 66, 140, 0.12);
+      transform: translateY(-3px);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 16.5rem;
+      object-fit: cover;
+    }
+  }
+
+  .cs-rb-care-card-body {
+    padding: 2rem 2.125rem 2.25rem;
+
+    h3 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--headerColor);
+      margin: 0 0 1rem;
+    }
+  }
+
+  .cs-rb-care-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6875rem;
+
+    li {
+      font-size: 1.0625rem;
+      color: var(--bodyTextColor);
+      padding-left: 1.125rem;
+      position: relative;
+
+      &::before {
+        content: "+";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 700;
+      }
+    }
+  }
+
+  .cs-rb-team-photo {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: var(--primary);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 22rem;
+      object-fit: cover;
+    }
+  }
+
+  .cs-rb-team-placeholder {
+    height: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--primaryLight);
+  }
+
+  .cs-rb-team-name {
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--headerColor);
+    margin: 1.125rem 0 0.25rem;
+  }
+
+  .cs-rb-team-title {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  /*-- Price teaser --*/
+
+  #cs-rb-prices {
+    background: var(--primary);
+    padding-top: clamp(4rem, 7vw, 6rem);
+    padding-bottom: clamp(4rem, 7vw, 6rem);
+  }
+
+  .cs-rb-prices-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+
+  .cs-rb-price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(225, 225, 225, 0.22);
+    }
+  }
+
+  .cs-rb-price-name {
+    font-size: 1rem;
+    color: #fff;
+    flex: 1;
+  }
+
+  .cs-rb-price-meta {
+    font-size: 0.8125rem;
+    color: var(--primaryLight);
+    flex: 0 0 4rem;
+    text-align: right;
+  }
+
+  .cs-rb-price-value {
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: #fff;
+    flex: 0 0 auto;
+    min-width: 3.5rem;
+    text-align: right;
+  }
+
+  .cs-rb-price-footnote {
+    font-size: 0.8125rem;
+    color: var(--primaryLight);
+    opacity: 0.8;
+    margin-top: 1rem;
+
+    a {
+      color: var(--primaryLight);
+    }
+  }
+
+  /*-- Visit strip --*/
+
+  #cs-rb-visit {
+    background: var(--bg-card);
+    padding-top: clamp(3.5rem, 6vw, 5rem);
+    padding-bottom: clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .cs-rb-visit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 2rem;
+  }
+
+  .cs-rb-visit-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .cs-rb-visit-value {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--bodyTextColor);
+
+    a {
+      color: var(--primary);
+    }
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .cs-rb-aim-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  .cs-rb-prices-grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   }
 }

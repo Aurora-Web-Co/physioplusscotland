@@ -38,6 +38,11 @@
     max-width: 28rem;
     max-height: 85vh;
     overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     padding: 2.5rem 1.5rem 1.5rem;
     background: #fff;
     border-radius: 0.75rem;
@@ -93,8 +98,10 @@
   }
 
   .cs-profile-modal-name {
-    font-family: var(--headerFont);
-    font-weight: 700;
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
     color: var(--headerColor);
     margin-bottom: 0.25rem;
   }
