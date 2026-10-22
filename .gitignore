@@ -2,3 +2,10 @@
 .cache
 node_modules
 public
+
+# AI tooling (local only)
+.agents/
+.claude/
+.codex/
+.impeccable/
+skills-lock.json
